@@ -10,6 +10,8 @@ import { AppSidebar } from "@/components/app-sidebar";
 import Dashboard from "@/pages/dashboard";
 import NewTrip from "@/pages/new-trip";
 import History from "@/pages/history";
+import Reports from "@/pages/reports";
+import Settings from "@/pages/settings";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,8 +20,8 @@ function Router() {
       <Route path="/" component={Dashboard} />
       <Route path="/new-trip" component={NewTrip} />
       <Route path="/history" component={History} />
-      <Route path="/reports" component={() => <div className="p-8">Relatórios em breve...</div>} />
-      <Route path="/settings" component={() => <div className="p-8">Configurações em breve...</div>} />
+      <Route path="/reports" component={Reports} />
+      <Route path="/settings" component={Settings} />
       <Route component={NotFound} />
     </Switch>
   );

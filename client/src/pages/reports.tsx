@@ -1,0 +1,281 @@
+import { useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Download, FileText, TrendingDown, TrendingUp, Calendar } from "lucide-react";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
+import { Badge } from "@/components/ui/badge";
+
+export default function Reports() {
+  const [period, setPeriod] = useState("month");
+  const [compareWith, setCompareWith] = useState("previous");
+
+  const comparisonData = [
+    { name: "Período Atual", emissions: 12450, fuel: 4892 },
+    { name: "Período Anterior", emissions: 14650, fuel: 5623 },
+  ];
+
+  const emissionsByType = [
+    { name: "Caminhão Pesado", value: 6200, percentage: 50 },
+    { name: "Caminhão Médio", value: 3725, percentage: 30 },
+    { name: "Caminhão Leve", value: 2485, percentage: 20 },
+  ];
+
+  const COLORS = [
+    "hsl(var(--chart-1))",
+    "hsl(var(--chart-2))",
+    "hsl(var(--chart-3))",
+  ];
+
+  const savingsData = {
+    co2Reduced: 2200,
+    fuelSaved: 731,
+    costSavings: 4386,
+    treesEquivalent: 100,
+  };
+
+  return (
+    <div className="space-y-8">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div>
+          <h1 className="text-3xl font-bold">Relatórios de Sustentabilidade</h1>
+          <p className="text-muted-foreground mt-1">
+            Análise comparativa e insights sobre a pegada de carbono
+          </p>
+        </div>
+        <Button data-testid="button-download-report">
+          <Download className="mr-2 h-4 w-4" />
+          Baixar Relatório PDF
+        </Button>
+      </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Calendar className="h-5 w-5" />
+            Período de Análise
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="period">Período</Label>
+              <Select value={period} onValueChange={setPeriod}>
+                <SelectTrigger id="period" data-testid="select-period">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="week">Esta Semana</SelectItem>
+                  <SelectItem value="month">Este Mês</SelectItem>
+                  <SelectItem value="quarter">Este Trimestre</SelectItem>
+                  <SelectItem value="year">Este Ano</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="compare">Comparar com</Label>
+              <Select value={compareWith} onValueChange={setCompareWith}>
+                <SelectTrigger id="compare" data-testid="select-compare">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="previous">Período Anterior</SelectItem>
+                  <SelectItem value="year-ago">Mesmo Período Ano Passado</SelectItem>
+                  <SelectItem value="baseline">Linha de Base</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle>Resumo Executivo</CardTitle>
+            <CardDescription>Principais métricas de sustentabilidade</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center justify-between p-4 rounded-lg bg-muted">
+              <div>
+                <p className="text-sm text-muted-foreground">Redução de CO2</p>
+                <p className="text-2xl font-bold font-mono text-chart-2">
+                  {savingsData.co2Reduced} kg
+                </p>
+              </div>
+              <TrendingDown className="h-8 w-8 text-chart-2" />
+            </div>
+            <div className="flex items-center justify-between p-4 rounded-lg bg-muted">
+              <div>
+                <p className="text-sm text-muted-foreground">Combustível Economizado</p>
+                <p className="text-2xl font-bold font-mono text-chart-2">
+                  {savingsData.fuelSaved} L
+                </p>
+              </div>
+              <TrendingDown className="h-8 w-8 text-chart-2" />
+            </div>
+            <div className="flex items-center justify-between p-4 rounded-lg bg-muted">
+              <div>
+                <p className="text-sm text-muted-foreground">Economia Financeira</p>
+                <p className="text-2xl font-bold font-mono text-primary">
+                  R$ {savingsData.costSavings.toLocaleString('pt-BR')}
+                </p>
+              </div>
+              <TrendingDown className="h-8 w-8 text-primary" />
+            </div>
+            <div className="p-4 rounded-lg border-2 border-chart-2 bg-chart-2/10">
+              <p className="text-sm text-muted-foreground mb-1">Equivalente Ambiental</p>
+              <p className="text-lg font-semibold">
+                {savingsData.treesEquivalent} árvores plantadas
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Baseado na absorção média de CO2 por árvore/ano
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Emissões por Tipo de Veículo</CardTitle>
+            <CardDescription>Distribuição percentual de CO2</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ResponsiveContainer width="100%" height={300}>
+              <PieChart>
+                <Pie
+                  data={emissionsByType}
+                  cx="50%"
+                  cy="50%"
+                  labelLine={false}
+                  label={({ name, percentage }) => `${name} (${percentage}%)`}
+                  outerRadius={80}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {emissionsByType.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+              </PieChart>
+            </ResponsiveContainer>
+            <div className="mt-4 space-y-2">
+              {emissionsByType.map((item, index) => (
+                <div key={index} className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div 
+                      className="w-3 h-3 rounded-sm" 
+                      style={{ backgroundColor: COLORS[index] }}
+                    />
+                    <span className="text-sm">{item.name}</span>
+                  </div>
+                  <span className="text-sm font-mono font-semibold">
+                    {item.value} kg
+                  </span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Análise Comparativa</CardTitle>
+          <CardDescription>
+            Comparação entre {period === "month" ? "este mês" : "este período"} e o período anterior
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={comparisonData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis 
+                dataKey="name" 
+                stroke="hsl(var(--muted-foreground))"
+                fontSize={12}
+              />
+              <YAxis 
+                stroke="hsl(var(--muted-foreground))"
+                fontSize={12}
+              />
+              <Tooltip 
+                contentStyle={{
+                  backgroundColor: "hsl(var(--popover))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: "var(--radius)",
+                }}
+                labelStyle={{ color: "hsl(var(--foreground))" }}
+              />
+              <Bar dataKey="emissions" fill="hsl(var(--chart-1))" radius={[8, 8, 0, 0]} name="CO2 (kg)" />
+              <Bar dataKey="fuel" fill="hsl(var(--chart-3))" radius={[8, 8, 0, 0]} name="Combustível (L)" />
+            </BarChart>
+          </ResponsiveContainer>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <div className="p-4 rounded-lg border">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-sm font-medium">Variação de Emissões</p>
+                <Badge variant="secondary" className="bg-chart-2 text-chart-2-foreground">
+                  <TrendingDown className="h-3 w-3 mr-1" />
+                  -15%
+                </Badge>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                Redução significativa comparado ao período anterior
+              </p>
+            </div>
+            <div className="p-4 rounded-lg border">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-sm font-medium">Variação de Combustível</p>
+                <Badge variant="secondary" className="bg-chart-2 text-chart-2-foreground">
+                  <TrendingDown className="h-3 w-3 mr-1" />
+                  -13%
+                </Badge>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                Economia significativa no consumo total
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <FileText className="h-5 w-5" />
+            Recomendações Estratégicas
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="p-4 rounded-lg border-l-4 border-l-chart-2 bg-muted">
+            <p className="font-medium mb-1">Otimização de Rotas</p>
+            <p className="text-sm text-muted-foreground">
+              Implementar sistema de roteirização inteligente pode reduzir até 18% das emissões
+            </p>
+          </div>
+          <div className="p-4 rounded-lg border-l-4 border-l-chart-2 bg-muted">
+            <p className="font-medium mb-1">Renovação de Frota</p>
+            <p className="text-sm text-muted-foreground">
+              Substituir 30% da frota por veículos elétricos ou híbridos reduziria 45% das emissões
+            </p>
+          </div>
+          <div className="p-4 rounded-lg border-l-4 border-l-chart-2 bg-muted">
+            <p className="font-medium mb-1">Treinamento de Condutores</p>
+            <p className="text-sm text-muted-foreground">
+              Programa de eco-driving pode melhorar a eficiência de combustível em até 12%
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
