@@ -51,8 +51,8 @@ export function AppSidebar() {
             <Leaf className="h-5 w-5 text-primary-foreground" />
           </div>
           <div>
-            <h2 className="text-sm font-semibold">Carbon Tracker</h2>
-            <p className="text-xs text-muted-foreground">Fleet Analytics</p>
+            <h2 className="text-sm font-semibold">LogVision</h2>
+            <p className="text-xs text-muted-foreground">Análise de Frota</p>
           </div>
         </div>
       </SidebarHeader>
