@@ -12,6 +12,7 @@ import NewTrip from "@/pages/new-trip";
 import History from "@/pages/history";
 import Reports from "@/pages/reports";
 import Settings from "@/pages/settings";
+import RouteMonitor from "@/pages/route-monitor";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/new-trip" component={NewTrip} />
       <Route path="/history" component={History} />
       <Route path="/reports" component={Reports} />
+      <Route path="/route-monitor" component={RouteMonitor} />
       <Route path="/settings" component={Settings} />
       <Route component={NotFound} />
     </Switch>

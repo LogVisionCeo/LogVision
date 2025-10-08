@@ -9,7 +9,7 @@ import {
   SidebarMenuItem,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { LayoutDashboard, Route, History, FileText, Settings, Leaf } from "lucide-react";
+import { LayoutDashboard, Route, History, FileText, Settings, Leaf, Map } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 const items = [
@@ -32,6 +32,11 @@ const items = [
     title: "Relatórios",
     url: "/reports",
     icon: FileText,
+  },
+  {
+    title: "Monitoramento",
+    url: "/route-monitor",
+    icon: Map,
   },
   {
     title: "Configurações",
