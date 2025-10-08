@@ -4,7 +4,7 @@ import { FuelEfficiencyChart } from "@/components/fuel-efficiency-chart";
 import { TripTable } from "@/components/trip-table";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Leaf, Truck, Fuel, TrendingDown, Plus } from "lucide-react";
+import { Leaf, Truck, Fuel, TrendingDown, Plus, TreePine } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Dashboard() {
@@ -103,6 +103,37 @@ export default function Dashboard() {
           trend={{ value: 23, isPositive: true }}
         />
       </div>
+
+      <Card className="border-2 border-primary bg-primary/5">
+        <CardContent className="pt-6">
+          <div className="flex items-center gap-6">
+            <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+              <TreePine className="h-8 w-8 text-primary-foreground" />
+            </div>
+            <div className="flex-1">
+              <p className="text-sm font-medium text-muted-foreground mb-1">
+                Compensação Ambiental Total
+              </p>
+              <p className="text-4xl font-bold text-primary mb-2" data-testid="text-total-trees">
+                566 árvores
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Quantidade necessária para compensar as emissões totais da frota este mês
+              </p>
+            </div>
+            <div className="hidden md:flex flex-col items-end gap-2">
+              <div className="text-right">
+                <p className="text-xs text-muted-foreground">Emissões Atuais</p>
+                <p className="text-lg font-bold font-mono">12,450 kg CO2</p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs text-muted-foreground">Absorção Necessária</p>
+                <p className="text-sm font-mono text-primary">22 kg/árvore/ano</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
         <EmissionsChart data={mockEmissionsData} />

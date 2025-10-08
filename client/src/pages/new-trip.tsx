@@ -8,6 +8,7 @@ export default function NewTrip() {
   const [result, setResult] = useState<{
     fuelConsumed: number;
     co2Emissions: number;
+    treesNeeded: number;
     recommendations: string[];
   } | null>(null);
 
@@ -31,6 +32,8 @@ export default function NewTrip() {
     const fuelConsumed = parseFloat(values.distance) * baseConsumption * weightFactor;
     const co2Emissions = fuelConsumed * (emissionFactors[values.fuelType] || 2.68);
     
+    const treesNeeded = Math.ceil(co2Emissions / 22);
+    
     const recommendations = [];
     if (values.fuelType === "diesel") {
       recommendations.push("Considere usar biodiesel para reduzir as emissões em 33%");
@@ -45,6 +48,7 @@ export default function NewTrip() {
     setResult({
       fuelConsumed: Math.round(fuelConsumed * 10) / 10,
       co2Emissions: Math.round(co2Emissions * 10) / 10,
+      treesNeeded,
       recommendations,
     });
   };
@@ -95,6 +99,26 @@ export default function NewTrip() {
                   <p className="text-sm text-muted-foreground">Emissões de CO2</p>
                   <p className="text-2xl font-bold font-mono" data-testid="text-co2-emissions">
                     {result.co2Emissions} kg
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-lg bg-primary/10 border-2 border-primary">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                  <Leaf className="h-6 w-6 text-primary-foreground" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-muted-foreground mb-1">
+                    Compensação Ambiental Necessária
+                  </p>
+                  <p className="text-3xl font-bold text-primary mb-2" data-testid="text-trees-needed">
+                    {result.treesNeeded} {result.treesNeeded === 1 ? 'árvore' : 'árvores'}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Quantidade de árvores necessárias para compensar as emissões desta viagem
+                    (considerando absorção média de 22kg CO2/árvore/ano)
                   </p>
                 </div>
               </div>
