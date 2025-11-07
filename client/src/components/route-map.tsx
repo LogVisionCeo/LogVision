@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import 'leaflet-routing-machine';
+import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
 interface RouteMapProps {
   origin: string;
@@ -57,7 +59,7 @@ export function RouteMap({ origin, destination, className = '' }: RouteMapProps)
       if (!map) return;
 
       map.eachLayer((layer) => {
-        if (layer instanceof L.Marker || layer instanceof L.Polyline) {
+        if (layer instanceof L.Marker || layer instanceof L.Polyline || (layer as any).options?.waypoints) {
           map.removeLayer(layer);
         }
       });
@@ -84,21 +86,44 @@ export function RouteMap({ origin, destination, className = '' }: RouteMapProps)
           shadowSize: [41, 41],
         });
 
-        L.marker(originCoords, { icon: originIcon })
-          .addTo(map)
-          .bindPopup(`<b>Origem:</b> ${origin}`);
-
-        L.marker(destCoords, { icon: destIcon })
-          .addTo(map)
-          .bindPopup(`<b>Destino:</b> ${destination}`);
-
-        const route = L.polyline([originCoords, destCoords], {
-          color: 'hsl(150, 60%, 40%)',
-          weight: 4,
-          opacity: 0.7,
+        const routingControl = (L.Routing as any).control({
+          waypoints: [
+            L.latLng(originCoords[0], originCoords[1]),
+            L.latLng(destCoords[0], destCoords[1])
+          ],
+          routeWhileDragging: false,
+          showAlternatives: false,
+          addWaypoints: false,
+          fitSelectedRoutes: true,
+          lineOptions: {
+            styles: [{ 
+              color: '#006400',
+              opacity: 0.8, 
+              weight: 6 
+            }],
+            extendToWaypoints: true,
+            missingRouteTolerance: 0
+          },
+          createMarker: function(i: number, waypoint: any, n: number) {
+            const icon = i === 0 ? originIcon : destIcon;
+            const label = i === 0 ? origin : destination;
+            return L.marker(waypoint.latLng, { icon })
+              .bindPopup(`<b>${i === 0 ? 'Origem' : 'Destino'}:</b> ${label}`);
+          },
+          router: (L.Routing as any).osrmv1({
+            serviceUrl: 'https://router.project-osrm.org/route/v1',
+            profile: 'driving'
+          })
         }).addTo(map);
 
-        map.fitBounds(route.getBounds(), { padding: [50, 50] });
+        routingControl.on('routesfound', function(e: any) {
+          const routes = e.routes;
+          const summary = routes[0].summary;
+          console.log('Rota encontrada:', {
+            distancia: (summary.totalDistance / 1000).toFixed(2) + ' km',
+            tempo: Math.round(summary.totalTime / 60) + ' minutos'
+          });
+        });
       }
     };
 
