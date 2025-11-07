@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/sidebar";
 import { LayoutDashboard, Route, History, FileText, Settings, Map } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import logoUrl from "@assets/Design sem nome_1762520056619.png";
+import logoUrl from "@assets/Design sem nome (1)_1762520243261.png";
 
 const items = [
   {

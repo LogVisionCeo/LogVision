@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Leaf, Truck, Fuel, TrendingDown, Plus, TreePine } from "lucide-react";
 import { Link } from "wouter";
-import logoUrl from "@assets/Design sem nome_1762520056619.png";
+import logoUrl from "@assets/Design sem nome (1)_1762520243261.png";
 
 export default function Dashboard() {
   const mockEmissionsData = [
@@ -65,17 +65,16 @@ export default function Dashboard() {
             <img 
               src={logoUrl} 
               alt="LogVision Logo" 
-              className="h-32 w-32 object-contain drop-shadow-2xl"
+              className="h-40 w-auto object-contain drop-shadow-2xl"
             />
             <div>
-              <h1 className="text-5xl font-black text-white mb-2">LogVision</h1>
-              <p className="text-white/90 text-xl font-semibold italic">
+              <p className="text-white/90 text-2xl font-bold italic mb-3">
                 Uma visão logística diferente
               </p>
-              <p className="text-white/70 text-base mt-2">
+              <p className="text-white/80 text-lg mt-2">
                 🌱 Compensação Ambiental através de Árvores
               </p>
-              <p className="text-white/60 text-sm mt-1">
+              <p className="text-white/70 text-base mt-1">
                 Rastreamento de carbono e cálculo de árvores necessárias
               </p>
             </div>
