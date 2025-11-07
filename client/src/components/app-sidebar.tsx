@@ -57,10 +57,10 @@ export function AppSidebar() {
             <img 
               src={logoUrl} 
               alt="LogVision Logo" 
-              className="h-12 w-12 object-contain"
+              className="h-16 w-16 object-contain"
             />
             <div>
-              <h2 className="text-base font-bold text-foreground">LogVision</h2>
+              <h2 className="text-lg font-bold text-foreground">LogVision</h2>
               <p className="text-xs text-muted-foreground italic">Uma visão logística diferente</p>
             </div>
           </div>

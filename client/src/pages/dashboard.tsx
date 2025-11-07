@@ -65,11 +65,11 @@ export default function Dashboard() {
             <img 
               src={logoUrl} 
               alt="LogVision Logo" 
-              className="h-24 w-24 object-contain"
+              className="h-32 w-32 object-contain drop-shadow-2xl"
             />
             <div>
-              <h1 className="text-4xl font-black text-white mb-2">LogVision</h1>
-              <p className="text-white/90 text-lg font-semibold italic">
+              <h1 className="text-5xl font-black text-white mb-2">LogVision</h1>
+              <p className="text-white/90 text-xl font-semibold italic">
                 Uma visão logística diferente
               </p>
               <p className="text-white/70 text-base mt-2">
