@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TripForm } from "@/components/trip-form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Leaf, Fuel, TrendingUp } from "lucide-react";
+import { Leaf, Fuel, TrendingUp, TreePine } from "lucide-react";
 
 export default function NewTrip() {
   const [result, setResult] = useState<{
@@ -104,22 +104,50 @@ export default function NewTrip() {
               </div>
             </div>
 
-            <div className="p-6 rounded-lg bg-primary/10 border-2 border-primary">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-                  <Leaf className="h-6 w-6 text-primary-foreground" />
+            <div className="p-8 rounded-xl bg-gradient-to-br from-primary/20 via-primary/10 to-accent/10 border-4 border-primary shadow-xl">
+              <div className="flex flex-col gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex gap-2">
+                    <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                      <TreePine className="h-8 w-8 text-primary-foreground" />
+                    </div>
+                    <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/80 flex items-center justify-center shadow-lg -ml-4">
+                      <TreePine className="h-8 w-8 text-primary-foreground" />
+                    </div>
+                    <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/60 flex items-center justify-center shadow-lg -ml-4">
+                      <TreePine className="h-8 w-8 text-primary-foreground" />
+                    </div>
+                  </div>
+                  <div className="flex-1 ml-2">
+                    <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
+                      🌱 Compensação Ambiental para Esta Viagem
+                    </p>
+                    <p className="text-5xl font-black text-primary mb-1" data-testid="text-trees-needed">
+                      {result.treesNeeded}
+                    </p>
+                    <p className="text-xl font-bold text-primary/80 mb-2">
+                      {result.treesNeeded === 1 ? 'árvore necessária' : 'árvores necessárias'}
+                    </p>
+                    <p className="text-sm text-foreground font-medium">
+                      Para neutralizar {result.co2Emissions} kg de CO2 emitidos nesta rota
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-muted-foreground mb-1">
-                    Compensação Ambiental Necessária
-                  </p>
-                  <p className="text-3xl font-bold text-primary mb-2" data-testid="text-trees-needed">
-                    {result.treesNeeded} {result.treesNeeded === 1 ? 'árvore' : 'árvores'}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Quantidade de árvores necessárias para compensar as emissões desta viagem
-                    (considerando absorção média de 22kg CO2/árvore/ano)
-                  </p>
+                
+                <div className="flex items-center justify-center gap-3 pt-4 border-t-2 border-primary/30">
+                  <div className="text-center px-4 py-2 rounded-lg bg-primary/15">
+                    <p className="text-xs font-semibold text-primary uppercase tracking-wide">
+                      Absorção por Árvore
+                    </p>
+                    <p className="text-lg font-bold font-mono text-primary">22 kg/ano</p>
+                  </div>
+                  <TreePine className="h-8 w-8 text-primary animate-pulse" />
+                  <div className="text-center px-4 py-2 rounded-lg bg-accent/20">
+                    <p className="text-xs font-semibold text-accent-foreground uppercase tracking-wide">
+                      Impacto Positivo
+                    </p>
+                    <p className="text-lg font-bold font-mono text-accent-foreground">100%</p>
+                  </div>
                 </div>
               </div>
             </div>

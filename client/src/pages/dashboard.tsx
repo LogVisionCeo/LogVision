@@ -73,6 +73,64 @@ export default function Dashboard() {
         </Link>
       </div>
 
+      <Card className="border-4 border-primary bg-gradient-to-br from-primary/10 via-primary/5 to-accent/10 shadow-lg">
+        <CardContent className="py-8 px-6">
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center gap-4">
+              <div className="flex gap-2">
+                <div className="flex-shrink-0 w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                  <TreePine className="h-10 w-10 text-primary-foreground" />
+                </div>
+                <div className="flex-shrink-0 w-20 h-20 rounded-full bg-primary/80 flex items-center justify-center shadow-lg -ml-6">
+                  <TreePine className="h-10 w-10 text-primary-foreground" />
+                </div>
+                <div className="flex-shrink-0 w-20 h-20 rounded-full bg-primary/60 flex items-center justify-center shadow-lg -ml-6">
+                  <TreePine className="h-10 w-10 text-primary-foreground" />
+                </div>
+              </div>
+              <div className="flex-1 ml-4">
+                <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">
+                  🌱 Compensação Ambiental - Nossa Missão Principal
+                </p>
+                <p className="text-6xl font-black text-primary mb-2" data-testid="text-total-trees">
+                  566
+                </p>
+                <p className="text-2xl font-bold text-primary/80 mb-3">
+                  árvores necessárias
+                </p>
+                <p className="text-base text-foreground font-medium">
+                  Para neutralizar completamente as emissões da frota este mês
+                </p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t-2 border-primary/20">
+              <div className="text-center p-4 rounded-lg bg-card/50">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">
+                  Emissões Totais
+                </p>
+                <p className="text-2xl font-bold font-mono text-foreground">12,450 kg</p>
+                <p className="text-xs text-muted-foreground mt-1">CO2 este mês</p>
+              </div>
+              <div className="text-center p-4 rounded-lg bg-primary/10">
+                <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-1">
+                  Capacidade por Árvore
+                </p>
+                <p className="text-2xl font-bold font-mono text-primary">22 kg/ano</p>
+                <p className="text-xs text-primary/80 mt-1">Absorção de CO2</p>
+              </div>
+              <div className="text-center p-4 rounded-lg bg-accent/20">
+                <p className="text-xs font-semibold text-accent-foreground uppercase tracking-wide mb-1">
+                  Impacto Positivo
+                </p>
+                <p className="text-2xl font-bold font-mono text-accent-foreground">100%</p>
+                <p className="text-xs text-muted-foreground mt-1">Neutralização</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
           title="Total CO2"
@@ -103,37 +161,6 @@ export default function Dashboard() {
           trend={{ value: 23, isPositive: true }}
         />
       </div>
-
-      <Card className="border-2 border-primary bg-primary/5">
-        <CardContent className="pt-6">
-          <div className="flex items-center gap-6">
-            <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-              <TreePine className="h-8 w-8 text-primary-foreground" />
-            </div>
-            <div className="flex-1">
-              <p className="text-sm font-medium text-muted-foreground mb-1">
-                Compensação Ambiental Total
-              </p>
-              <p className="text-4xl font-bold text-primary mb-2" data-testid="text-total-trees">
-                566 árvores
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Quantidade necessária para compensar as emissões totais da frota este mês
-              </p>
-            </div>
-            <div className="hidden md:flex flex-col items-end gap-2">
-              <div className="text-right">
-                <p className="text-xs text-muted-foreground">Emissões Atuais</p>
-                <p className="text-lg font-bold font-mono">12,450 kg CO2</p>
-              </div>
-              <div className="text-right">
-                <p className="text-xs text-muted-foreground">Absorção Necessária</p>
-                <p className="text-sm font-mono text-primary">22 kg/árvore/ano</p>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
 
       <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
         <EmissionsChart data={mockEmissionsData} />
