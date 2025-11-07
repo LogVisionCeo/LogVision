@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Leaf, Truck, Fuel, TrendingDown, Plus, TreePine } from "lucide-react";
 import { Link } from "wouter";
+import logoUrl from "@assets/Design sem nome_1762520056619.png";
 
 export default function Dashboard() {
   const mockEmissionsData = [
@@ -61,18 +62,20 @@ export default function Dashboard() {
       <div className="bg-primary rounded-2xl p-8 shadow-2xl -mx-8 -mt-8 mb-8">
         <div className="flex items-center justify-between gap-6">
           <div className="flex items-center gap-6">
-            <div className="flex gap-3">
-              <TreePine className="h-16 w-16 text-white" />
-              <TreePine className="h-16 w-16 text-white/90" />
-              <TreePine className="h-16 w-16 text-white/80" />
-              <TreePine className="h-16 w-16 text-white/70" />
-            </div>
+            <img 
+              src={logoUrl} 
+              alt="LogVision Logo" 
+              className="h-24 w-24 object-contain"
+            />
             <div>
               <h1 className="text-4xl font-black text-white mb-2">LogVision</h1>
-              <p className="text-white/90 text-lg font-semibold">
+              <p className="text-white/90 text-lg font-semibold italic">
+                Uma visão logística diferente
+              </p>
+              <p className="text-white/70 text-base mt-2">
                 🌱 Compensação Ambiental através de Árvores
               </p>
-              <p className="text-white/70 text-sm mt-1">
+              <p className="text-white/60 text-sm mt-1">
                 Rastreamento de carbono e cálculo de árvores necessárias
               </p>
             </div>
