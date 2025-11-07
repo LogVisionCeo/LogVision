@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CustomMap } from "@/components/custom-map";
+import { RouteMap } from "@/components/route-map";
 import { MapPin, Navigation } from "lucide-react";
 
 export default function RouteMonitor() {
@@ -78,19 +78,19 @@ export default function RouteMonitor() {
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li className="flex items-start gap-2">
                   <span className="text-primary">•</span>
-                  <span>Mapa customizado do Brasil com visualização satélite</span>
+                  <span>Visualização de satélite gratuita via OpenStreetMap</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary">•</span>
-                  <span>Marcador "O" (verde) para origem e "D" (vermelho) para destino</span>
+                  <span>Marcadores de origem (verde) e destino (vermelho)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary">•</span>
-                  <span>Distância real calculada entre as cidades</span>
+                  <span>Rota direta entre as cidades</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary">•</span>
-                  <span>Zoom com scroll e navegação arrastando o mapa</span>
+                  <span>Zoom e navegação interativa</span>
                 </li>
               </ul>
             </div>
@@ -105,7 +105,7 @@ export default function RouteMonitor() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <CustomMap origin={origin} destination={destination} />
+            <RouteMap origin={origin} destination={destination} />
           </CardContent>
         </Card>
       </div>
@@ -116,24 +116,23 @@ export default function RouteMonitor() {
         </CardHeader>
         <CardContent className="space-y-3 text-sm text-muted-foreground">
           <p>
-            O sistema de monitoramento de rotas utiliza um <strong>mapa customizado do Brasil</strong> 
-            desenvolvido especialmente para LogVision, sem dependências externas.
+            O sistema de monitoramento de rotas utiliza <strong>OpenStreetMap</strong> (OSM) 
+            e imagens de satélite da <strong>Esri</strong>, totalmente gratuitas e sem necessidade 
+            de chave API.
           </p>
           <p>
             <strong>Recursos disponíveis:</strong>
           </p>
           <ul className="list-disc list-inside space-y-1 ml-4">
-            <li>Visualização em modo mapa ou satélite (renderizado proceduralmente)</li>
-            <li>20 principais cidades brasileiras mapeadas com coordenadas reais</li>
-            <li>Cálculo de distância real usando fórmula de Haversine</li>
-            <li>Controles de zoom (+/-) e reset de visualização</li>
-            <li>Navegação por arrastar (drag) no mapa</li>
-            <li>Zoom com scroll do mouse</li>
+            <li>Visualização em mapa de ruas ou satélite</li>
+            <li>Marcadores coloridos para origem e destino</li>
+            <li>Rota visualizada entre as cidades</li>
+            <li>Geocodificação automática das cidades brasileiras</li>
+            <li>Zoom e navegação interativa no mapa</li>
           </ul>
           <p>
-            <strong>Cidades disponíveis:</strong> São Paulo, Rio de Janeiro, Belo Horizonte, Brasília, 
-            Curitiba, Porto Alegre, Salvador, Fortaleza, Recife, Manaus, Belém, Goiânia, Florianópolis, 
-            Vitória, Natal, Campo Grande, Cuiabá, São Luís, Maceió, João Pessoa.
+            Para visualizar em satélite, clique no botão <strong>"Satélite"</strong> no canto 
+            superior direito do mapa.
           </p>
         </CardContent>
       </Card>
