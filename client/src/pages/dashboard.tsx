@@ -58,19 +58,39 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div>
-          <h1 className="text-3xl font-bold">Dashboard de Emissões</h1>
-          <p className="text-muted-foreground mt-1">
-            Monitoramento em tempo real da pegada de carbono da sua frota
-          </p>
+      <div className="bg-primary rounded-2xl p-8 shadow-2xl -mx-8 -mt-8 mb-8">
+        <div className="flex items-center justify-between gap-6">
+          <div className="flex items-center gap-6">
+            <div className="flex gap-3">
+              <TreePine className="h-16 w-16 text-white" />
+              <TreePine className="h-16 w-16 text-white/90" />
+              <TreePine className="h-16 w-16 text-white/80" />
+              <TreePine className="h-16 w-16 text-white/70" />
+            </div>
+            <div>
+              <h1 className="text-4xl font-black text-white mb-2">LogVision</h1>
+              <p className="text-white/90 text-lg font-semibold">
+                🌱 Compensação Ambiental através de Árvores
+              </p>
+              <p className="text-white/70 text-sm mt-1">
+                Rastreamento de carbono e cálculo de árvores necessárias
+              </p>
+            </div>
+          </div>
+          <Link href="/new-trip">
+            <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90" data-testid="button-new-trip">
+              <Plus className="mr-2 h-5 w-5" />
+              Nova Viagem
+            </Button>
+          </Link>
         </div>
-        <Link href="/new-trip">
-          <Button data-testid="button-new-trip">
-            <Plus className="mr-2 h-4 w-4" />
-            Nova Viagem
-          </Button>
-        </Link>
+      </div>
+
+      <div>
+        <h2 className="text-2xl font-bold mb-1">Dashboard de Emissões</h2>
+        <p className="text-muted-foreground">
+          Monitoramento em tempo real da pegada de carbono da sua frota
+        </p>
       </div>
 
       <Card className="border-4 border-primary bg-gradient-to-br from-primary/10 via-primary/5 to-accent/10 shadow-lg">
