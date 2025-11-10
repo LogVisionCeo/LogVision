@@ -78,7 +78,7 @@ export default function Dashboard() {
       </div>
 
       <div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3">Dashboard de Emissões</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3">Monitoramento</h2>
         <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl font-medium">
           Monitoramento em tempo real da pegada de carbono da sua frota
         </p>
@@ -128,13 +128,13 @@ export default function Dashboard() {
               </div>
               <div className="text-center p-6 md:p-8 rounded-xl bg-gradient-to-br from-primary/25 via-primary/15 to-primary/10 border-2 border-primary/50 shadow-xl hover-elevate">
                 <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
-                  <TreePine className="h-5 w-5 md:h-7 md:w-7 text-primary" />
-                  <p className="text-sm md:text-base font-bold text-primary uppercase tracking-wide">
+                  <TreePine className="h-5 w-5 md:h-7 md:w-7 text-white" />
+                  <p className="text-sm md:text-base font-bold text-white uppercase tracking-wide">
                     Capacidade por Árvore
                   </p>
                 </div>
-                <p className="text-4xl md:text-5xl lg:text-6xl font-black font-mono text-primary mb-2 md:mb-3">22 kg/ano</p>
-                <p className="text-sm md:text-base text-primary/80 font-semibold mt-2">Absorção de CO2</p>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-black font-mono text-white mb-2 md:mb-3">22 kg/ano</p>
+                <p className="text-sm md:text-base text-white/90 font-semibold mt-2">Absorção de CO2</p>
               </div>
               <div className="text-center p-6 md:p-8 rounded-xl bg-gradient-to-br from-primary/20 via-primary/12 to-primary/8 border-2 border-primary/40 shadow-xl hover-elevate">
                 <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
