@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/sidebar";
 import { LayoutDashboard, Route, History, FileText, Settings, Map } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import logoUrl from "@assets/Design sem nome (1)_1762520243261.png";
 
 const items = [
   {
@@ -53,18 +52,11 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader className="border-b border-sidebar-border p-4">
         <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-3">
-            <img 
-              src={logoUrl} 
-              alt="LogVision Logo" 
-              className="h-16 w-16 object-contain"
-            />
-            <div>
-              <h2 className="text-lg font-bold text-foreground">LogVision</h2>
-            </div>
+          <div>
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">LogVision</h2>
           </div>
           <div className="px-2 py-2 rounded-md bg-primary/10 border border-primary/20">
-            <p className="text-xs font-semibold text-primary leading-tight">
+            <p className="text-xs md:text-sm font-semibold text-primary leading-tight">
               Compensação Ambiental através de Árvores
             </p>
           </div>

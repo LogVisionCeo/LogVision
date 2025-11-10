@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Leaf, Truck, Fuel, TrendingDown, Plus, TreePine } from "lucide-react";
 import { Link } from "wouter";
-import logoUrl from "@assets/Design sem nome (1)_1762520243261.png";
 
 export default function Dashboard() {
   const mockEmissionsData = [
@@ -59,26 +58,19 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-8">
-      <div className="bg-gradient-to-r from-primary via-primary/90 to-accent rounded-2xl p-10 shadow-2xl -mx-8 -mt-8 mb-8">
-        <div className="flex items-center justify-between gap-8">
-          <div className="flex items-center gap-8">
-            <img 
-              src={logoUrl} 
-              alt="LogVision Logo" 
-              className="h-64 w-auto object-contain drop-shadow-2xl"
-            />
-            <div>
-              <p className="text-white/85 text-3xl font-bold mt-3">
-                Compensação Ambiental através de Árvores
-              </p>
-              <p className="text-white/75 text-xl font-medium mt-2">
-                Rastreamento de carbono e cálculo de árvores necessárias
-              </p>
-            </div>
+      <div className="bg-gradient-to-r from-primary via-primary/90 to-accent rounded-2xl p-6 md:p-10 shadow-2xl -mx-8 -mt-8 mb-8">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8">
+          <div className="flex-1">
+            <p className="text-white/85 text-2xl md:text-3xl lg:text-4xl font-bold">
+              Compensação Ambiental através de Árvores
+            </p>
+            <p className="text-white/75 text-lg md:text-xl lg:text-2xl font-medium mt-2 md:mt-3">
+              Rastreamento de carbono e cálculo de árvores necessárias
+            </p>
           </div>
           <Link href="/new-trip">
-            <Button variant="secondary" size="lg" className="bg-card text-primary hover:bg-card/90 text-lg px-6 py-6" data-testid="button-new-trip">
-              <Plus className="mr-2 h-6 w-6" />
+            <Button variant="secondary" size="lg" className="bg-card text-primary whitespace-nowrap" data-testid="button-new-trip">
+              <Plus className="mr-2 h-5 w-5" />
               Nova Viagem
             </Button>
           </Link>
@@ -86,73 +78,73 @@ export default function Dashboard() {
       </div>
 
       <div>
-        <h2 className="text-4xl font-bold mb-2">Dashboard de Emissões</h2>
-        <p className="text-muted-foreground text-xl font-medium">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3">Dashboard de Emissões</h2>
+        <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl font-medium">
           Monitoramento em tempo real da pegada de carbono da sua frota
         </p>
       </div>
 
-      <Card className="border-4 border-primary bg-gradient-to-br from-primary/10 via-primary/5 to-accent/10 shadow-lg">
-        <CardContent className="py-8 px-6">
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-4">
+      <Card className="border-4 border-primary bg-gradient-to-br from-primary/60 via-primary/30 to-primary/5 shadow-lg">
+        <CardContent className="py-6 md:py-10 px-4 md:px-8">
+          <div className="flex flex-col gap-4 md:gap-6">
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
               <div className="flex gap-2">
-                <div className="flex-shrink-0 w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                  <TreePine className="h-10 w-10 text-primary-foreground" />
+                <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-primary-foreground" />
                 </div>
-                <div className="flex-shrink-0 w-20 h-20 rounded-full bg-primary/80 flex items-center justify-center shadow-lg -ml-6">
-                  <TreePine className="h-10 w-10 text-primary-foreground" />
+                <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-primary/80 flex items-center justify-center shadow-lg -ml-4 md:-ml-6">
+                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-primary-foreground" />
                 </div>
-                <div className="flex-shrink-0 w-20 h-20 rounded-full bg-primary/60 flex items-center justify-center shadow-lg -ml-6">
-                  <TreePine className="h-10 w-10 text-primary-foreground" />
+                <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-primary/60 flex items-center justify-center shadow-lg -ml-4 md:-ml-6">
+                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-primary-foreground" />
                 </div>
               </div>
-              <div className="flex-1 ml-4">
-                <p className="text-lg font-bold text-primary uppercase tracking-wide mb-3">
+              <div className="flex-1 text-center md:text-left md:ml-6">
+                <p className="text-base md:text-lg lg:text-2xl font-bold text-primary uppercase tracking-wide mb-2 md:mb-4">
                   Compensação Ambiental - Nossa Missão Principal
                 </p>
-                <p className="text-7xl font-black text-primary mb-3" data-testid="text-total-trees">
+                <p className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-primary mb-2 md:mb-4" data-testid="text-total-trees">
                   566
                 </p>
-                <p className="text-3xl font-bold text-primary/80 mb-4">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary/80 mb-3 md:mb-5">
                   árvores necessárias
                 </p>
-                <p className="text-xl text-foreground font-semibold">
+                <p className="text-base md:text-xl lg:text-2xl text-foreground font-semibold">
                   Para neutralizar completamente as emissões da frota este mês
                 </p>
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t-2 border-primary/20">
-              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-destructive/20 via-destructive/10 to-destructive/5 border-2 border-destructive/40 shadow-xl hover-elevate">
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <Leaf className="h-6 w-6 text-destructive" />
-                  <p className="text-sm font-bold text-destructive uppercase tracking-wide">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-4 md:pt-6 border-t-2 border-primary/30">
+              <div className="text-center p-6 md:p-8 rounded-xl bg-gradient-to-br from-destructive/20 via-destructive/10 to-destructive/5 border-2 border-destructive/40 shadow-xl hover-elevate">
+                <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
+                  <Leaf className="h-5 w-5 md:h-7 md:w-7 text-destructive" />
+                  <p className="text-sm md:text-base font-bold text-destructive uppercase tracking-wide">
                     Emissões Totais
                   </p>
                 </div>
-                <p className="text-5xl font-black font-mono text-destructive mb-2">12,450 kg</p>
-                <p className="text-sm text-destructive/80 font-semibold mt-2">CO2 este mês</p>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-black font-mono text-destructive mb-2 md:mb-3">12,450 kg</p>
+                <p className="text-sm md:text-base text-destructive/80 font-semibold mt-2">CO2 este mês</p>
               </div>
-              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary/25 via-primary/15 to-primary/10 border-2 border-primary/50 shadow-xl hover-elevate">
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <TreePine className="h-6 w-6 text-primary" />
-                  <p className="text-sm font-bold text-primary uppercase tracking-wide">
+              <div className="text-center p-6 md:p-8 rounded-xl bg-gradient-to-br from-primary/25 via-primary/15 to-primary/10 border-2 border-primary/50 shadow-xl hover-elevate">
+                <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
+                  <TreePine className="h-5 w-5 md:h-7 md:w-7 text-primary" />
+                  <p className="text-sm md:text-base font-bold text-primary uppercase tracking-wide">
                     Capacidade por Árvore
                   </p>
                 </div>
-                <p className="text-5xl font-black font-mono text-primary mb-2">22 kg/ano</p>
-                <p className="text-sm text-primary/80 font-semibold mt-2">Absorção de CO2</p>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-black font-mono text-primary mb-2 md:mb-3">22 kg/ano</p>
+                <p className="text-sm md:text-base text-primary/80 font-semibold mt-2">Absorção de CO2</p>
               </div>
-              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary/20 via-primary/12 to-primary/8 border-2 border-primary/40 shadow-xl hover-elevate">
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <TrendingDown className="h-6 w-6 text-primary" />
-                  <p className="text-sm font-bold text-primary uppercase tracking-wide">
+              <div className="text-center p-6 md:p-8 rounded-xl bg-gradient-to-br from-primary/20 via-primary/12 to-primary/8 border-2 border-primary/40 shadow-xl hover-elevate">
+                <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
+                  <TrendingDown className="h-5 w-5 md:h-7 md:w-7 text-primary" />
+                  <p className="text-sm md:text-base font-bold text-primary uppercase tracking-wide">
                     Impacto Positivo
                   </p>
                 </div>
-                <p className="text-5xl font-black font-mono text-primary mb-2">100%</p>
-                <p className="text-sm text-primary/80 font-semibold mt-2">Neutralização</p>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-black font-mono text-primary mb-2 md:mb-3">100%</p>
+                <p className="text-sm md:text-base text-primary/80 font-semibold mt-2">Neutralização</p>
               </div>
             </div>
           </div>
