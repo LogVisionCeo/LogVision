@@ -100,7 +100,7 @@ export default function Dashboard() {
                 </div>
               </div>
               <div className="flex-1 text-center md:text-left md:ml-6">
-                <p className="text-base md:text-lg lg:text-2xl font-bold text-primary uppercase tracking-wide mb-2 md:mb-4">
+                <p className="text-base md:text-lg lg:text-2xl font-bold text-white uppercase tracking-wide mb-2 md:mb-4">
                   Compensação Ambiental - Nossa Missão Principal
                 </p>
                 <p className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-primary mb-2 md:mb-4" data-testid="text-total-trees">
