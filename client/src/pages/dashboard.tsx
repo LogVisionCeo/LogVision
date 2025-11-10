@@ -59,29 +59,29 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-8">
-      <div className="bg-primary rounded-2xl p-8 shadow-2xl -mx-8 -mt-8 mb-8">
-        <div className="flex items-center justify-between gap-6">
-          <div className="flex items-center gap-6">
+      <div className="bg-primary rounded-2xl p-10 shadow-2xl -mx-8 -mt-8 mb-8">
+        <div className="flex items-center justify-between gap-8">
+          <div className="flex items-center gap-8">
             <img 
               src={logoUrl} 
               alt="LogVision Logo" 
-              className="h-40 w-auto object-contain drop-shadow-2xl"
+              className="h-64 w-auto object-contain drop-shadow-2xl"
             />
             <div>
-              <p className="text-white/90 text-2xl font-bold italic mb-3">
+              <p className="text-white/90 text-4xl font-bold italic mb-4">
                 Uma visão logística diferente
               </p>
-              <p className="text-white/80 text-lg mt-2">
+              <p className="text-white/85 text-2xl font-semibold mt-3">
                 🌱 Compensação Ambiental através de Árvores
               </p>
-              <p className="text-white/70 text-base mt-1">
+              <p className="text-white/75 text-xl font-medium mt-2">
                 Rastreamento de carbono e cálculo de árvores necessárias
               </p>
             </div>
           </div>
           <Link href="/new-trip">
-            <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90" data-testid="button-new-trip">
-              <Plus className="mr-2 h-5 w-5" />
+            <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-6 py-6" data-testid="button-new-trip">
+              <Plus className="mr-2 h-6 w-6" />
               Nova Viagem
             </Button>
           </Link>
@@ -89,8 +89,8 @@ export default function Dashboard() {
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold mb-1">Dashboard de Emissões</h2>
-        <p className="text-muted-foreground">
+        <h2 className="text-4xl font-bold mb-2">Dashboard de Emissões</h2>
+        <p className="text-muted-foreground text-xl font-medium">
           Monitoramento em tempo real da pegada de carbono da sua frota
         </p>
       </div>
@@ -111,16 +111,16 @@ export default function Dashboard() {
                 </div>
               </div>
               <div className="flex-1 ml-4">
-                <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">
+                <p className="text-lg font-bold text-primary uppercase tracking-wide mb-3">
                   🌱 Compensação Ambiental - Nossa Missão Principal
                 </p>
-                <p className="text-6xl font-black text-primary mb-2" data-testid="text-total-trees">
+                <p className="text-7xl font-black text-primary mb-3" data-testid="text-total-trees">
                   566
                 </p>
-                <p className="text-2xl font-bold text-primary/80 mb-3">
+                <p className="text-3xl font-bold text-primary/80 mb-4">
                   árvores necessárias
                 </p>
-                <p className="text-base text-foreground font-medium">
+                <p className="text-xl text-foreground font-semibold">
                   Para neutralizar completamente as emissões da frota este mês
                 </p>
               </div>
@@ -128,34 +128,34 @@ export default function Dashboard() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t-2 border-primary/20">
               <div className="text-center p-6 rounded-xl bg-gradient-to-br from-destructive/20 via-destructive/10 to-destructive/5 border-2 border-destructive/40 shadow-xl hover-elevate">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <Leaf className="h-5 w-5 text-destructive" />
-                  <p className="text-xs font-bold text-destructive uppercase tracking-wide">
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <Leaf className="h-6 w-6 text-destructive" />
+                  <p className="text-sm font-bold text-destructive uppercase tracking-wide">
                     Emissões Totais
                   </p>
                 </div>
-                <p className="text-4xl font-black font-mono text-destructive mb-1">12,450 kg</p>
-                <p className="text-xs text-destructive/80 font-semibold mt-1">CO2 este mês</p>
+                <p className="text-5xl font-black font-mono text-destructive mb-2">12,450 kg</p>
+                <p className="text-sm text-destructive/80 font-semibold mt-2">CO2 este mês</p>
               </div>
               <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary/25 via-primary/15 to-primary/10 border-2 border-primary/50 shadow-xl hover-elevate">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <TreePine className="h-5 w-5 text-primary" />
-                  <p className="text-xs font-bold text-primary uppercase tracking-wide">
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <TreePine className="h-6 w-6 text-primary" />
+                  <p className="text-sm font-bold text-primary uppercase tracking-wide">
                     Capacidade por Árvore
                   </p>
                 </div>
-                <p className="text-4xl font-black font-mono text-primary mb-1">22 kg/ano</p>
-                <p className="text-xs text-primary/80 font-semibold mt-1">Absorção de CO2</p>
+                <p className="text-5xl font-black font-mono text-primary mb-2">22 kg/ano</p>
+                <p className="text-sm text-primary/80 font-semibold mt-2">Absorção de CO2</p>
               </div>
               <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary/20 via-primary/12 to-primary/8 border-2 border-primary/40 shadow-xl hover-elevate">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <TrendingDown className="h-5 w-5 text-primary" />
-                  <p className="text-xs font-bold text-primary uppercase tracking-wide">
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <TrendingDown className="h-6 w-6 text-primary" />
+                  <p className="text-sm font-bold text-primary uppercase tracking-wide">
                     Impacto Positivo
                   </p>
                 </div>
-                <p className="text-4xl font-black font-mono text-primary mb-1">100%</p>
-                <p className="text-xs text-primary/80 font-semibold mt-1">Neutralização</p>
+                <p className="text-5xl font-black font-mono text-primary mb-2">100%</p>
+                <p className="text-sm text-primary/80 font-semibold mt-2">Neutralização</p>
               </div>
             </div>
           </div>
