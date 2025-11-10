@@ -127,12 +127,15 @@ export default function Dashboard() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t-2 border-primary/20">
-              <div className="text-center p-4 rounded-lg bg-card/50">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">
-                  Emissões Totais
-                </p>
-                <p className="text-2xl font-bold font-mono text-foreground">12,450 kg</p>
-                <p className="text-xs text-muted-foreground mt-1">CO2 este mês</p>
+              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-destructive/20 via-destructive/10 to-destructive/5 border-2 border-destructive/40 shadow-xl hover-elevate">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <Leaf className="h-5 w-5 text-destructive" />
+                  <p className="text-xs font-bold text-destructive uppercase tracking-wide">
+                    Emissões Totais
+                  </p>
+                </div>
+                <p className="text-4xl font-black font-mono text-destructive mb-1">12,450 kg</p>
+                <p className="text-xs text-destructive/80 font-semibold mt-1">CO2 este mês</p>
               </div>
               <div className="text-center p-4 rounded-lg bg-primary/10">
                 <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-1">
