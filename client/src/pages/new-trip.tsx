@@ -120,7 +120,7 @@ export default function NewTrip() {
                   </div>
                   <div className="flex-1 ml-2">
                     <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                      🌱 Compensação Ambiental para Esta Viagem
+                      Compensação Ambiental para Esta Viagem
                     </p>
                     <p className="text-5xl font-black text-primary mb-1" data-testid="text-trees-needed">
                       {result.treesNeeded}

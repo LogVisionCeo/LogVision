@@ -59,7 +59,7 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-8">
-      <div className="bg-primary rounded-2xl p-10 shadow-2xl -mx-8 -mt-8 mb-8">
+      <div className="bg-gradient-to-r from-primary via-primary/90 to-accent rounded-2xl p-10 shadow-2xl -mx-8 -mt-8 mb-8">
         <div className="flex items-center justify-between gap-8">
           <div className="flex items-center gap-8">
             <img 
@@ -68,11 +68,8 @@ export default function Dashboard() {
               className="h-64 w-auto object-contain drop-shadow-2xl"
             />
             <div>
-              <p className="text-white/90 text-4xl font-bold italic mb-4">
-                Uma visão logística diferente
-              </p>
-              <p className="text-white/85 text-2xl font-semibold mt-3">
-                🌱 Compensação Ambiental através de Árvores
+              <p className="text-white/85 text-3xl font-bold mt-3">
+                Compensação Ambiental através de Árvores
               </p>
               <p className="text-white/75 text-xl font-medium mt-2">
                 Rastreamento de carbono e cálculo de árvores necessárias
@@ -112,7 +109,7 @@ export default function Dashboard() {
               </div>
               <div className="flex-1 ml-4">
                 <p className="text-lg font-bold text-primary uppercase tracking-wide mb-3">
-                  🌱 Compensação Ambiental - Nossa Missão Principal
+                  Compensação Ambiental - Nossa Missão Principal
                 </p>
                 <p className="text-7xl font-black text-primary mb-3" data-testid="text-total-trees">
                   566

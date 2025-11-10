@@ -61,12 +61,11 @@ export function AppSidebar() {
             />
             <div>
               <h2 className="text-lg font-bold text-foreground">LogVision</h2>
-              <p className="text-xs text-muted-foreground italic">Uma visão logística diferente</p>
             </div>
           </div>
           <div className="px-2 py-2 rounded-md bg-primary/10 border border-primary/20">
             <p className="text-xs font-semibold text-primary leading-tight">
-              🌱 Compensação Ambiental através de Árvores
+              Compensação Ambiental através de Árvores
             </p>
           </div>
         </div>
