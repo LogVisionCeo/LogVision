@@ -84,38 +84,38 @@ export default function Dashboard() {
         </p>
       </div>
 
-      <Card className="border-4 border-primary bg-gradient-to-br from-primary/60 via-primary/30 to-primary/5 shadow-lg">
+      <Card className="border-4 border-primary bg-primary shadow-lg">
         <CardContent className="py-6 md:py-10 px-4 md:px-8">
           <div className="flex flex-col gap-4 md:gap-6">
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
               <div className="flex gap-2">
-                <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-primary-foreground" />
+                <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/20 flex items-center justify-center shadow-lg">
+                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
                 </div>
-                <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-primary/80 flex items-center justify-center shadow-lg -ml-4 md:-ml-6">
-                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-primary-foreground" />
+                <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/15 flex items-center justify-center shadow-lg -ml-4 md:-ml-6">
+                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
                 </div>
-                <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-primary/60 flex items-center justify-center shadow-lg -ml-4 md:-ml-6">
-                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-primary-foreground" />
+                <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/10 flex items-center justify-center shadow-lg -ml-4 md:-ml-6">
+                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
                 </div>
               </div>
               <div className="flex-1 text-center md:text-left md:ml-6">
-                <p className="text-base md:text-lg lg:text-2xl font-bold text-white uppercase tracking-wide mb-2 md:mb-4">
+                <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white uppercase tracking-wide mb-3 md:mb-5">
                   Compensação Ambiental - Nossa Missão Principal
                 </p>
-                <p className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-primary mb-2 md:mb-4" data-testid="text-total-trees">
+                <p className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-2 md:mb-4" data-testid="text-total-trees">
                   566
                 </p>
-                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary/80 mb-3 md:mb-5">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white/90 mb-3 md:mb-5">
                   árvores necessárias
                 </p>
-                <p className="text-base md:text-xl lg:text-2xl text-foreground font-semibold">
+                <p className="text-base md:text-xl lg:text-2xl text-white/80 font-semibold">
                   Para neutralizar completamente as emissões da frota este mês
                 </p>
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-4 md:pt-6 border-t-2 border-primary/30">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-4 md:pt-6 border-t-2 border-white/20">
               <div className="text-center p-6 md:p-8 rounded-xl bg-gradient-to-br from-destructive/20 via-destructive/10 to-destructive/5 border-2 border-destructive/40 shadow-xl hover-elevate">
                 <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
                   <Leaf className="h-5 w-5 md:h-7 md:w-7 text-destructive" />
