@@ -77,7 +77,7 @@ export default function Dashboard() {
             </div>
           </div>
           <Link href="/new-trip">
-            <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-6 py-6" data-testid="button-new-trip">
+            <Button variant="secondary" size="lg" className="bg-card text-primary hover:bg-card/90 text-lg px-6 py-6" data-testid="button-new-trip">
               <Plus className="mr-2 h-6 w-6" />
               Nova Viagem
             </Button>
