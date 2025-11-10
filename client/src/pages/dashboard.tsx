@@ -137,19 +137,25 @@ export default function Dashboard() {
                 <p className="text-4xl font-black font-mono text-destructive mb-1">12,450 kg</p>
                 <p className="text-xs text-destructive/80 font-semibold mt-1">CO2 este mês</p>
               </div>
-              <div className="text-center p-4 rounded-lg bg-primary/10">
-                <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-1">
-                  Capacidade por Árvore
-                </p>
-                <p className="text-2xl font-bold font-mono text-primary">22 kg/ano</p>
-                <p className="text-xs text-primary/80 mt-1">Absorção de CO2</p>
+              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary/25 via-primary/15 to-primary/10 border-2 border-primary/50 shadow-xl hover-elevate">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <TreePine className="h-5 w-5 text-primary" />
+                  <p className="text-xs font-bold text-primary uppercase tracking-wide">
+                    Capacidade por Árvore
+                  </p>
+                </div>
+                <p className="text-4xl font-black font-mono text-primary mb-1">22 kg/ano</p>
+                <p className="text-xs text-primary/80 font-semibold mt-1">Absorção de CO2</p>
               </div>
-              <div className="text-center p-4 rounded-lg bg-accent/20">
-                <p className="text-xs font-semibold text-accent-foreground uppercase tracking-wide mb-1">
-                  Impacto Positivo
-                </p>
-                <p className="text-2xl font-bold font-mono text-accent-foreground">100%</p>
-                <p className="text-xs text-muted-foreground mt-1">Neutralização</p>
+              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary/20 via-primary/12 to-primary/8 border-2 border-primary/40 shadow-xl hover-elevate">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <TrendingDown className="h-5 w-5 text-primary" />
+                  <p className="text-xs font-bold text-primary uppercase tracking-wide">
+                    Impacto Positivo
+                  </p>
+                </div>
+                <p className="text-4xl font-black font-mono text-primary mb-1">100%</p>
+                <p className="text-xs text-primary/80 font-semibold mt-1">Neutralização</p>
               </div>
             </div>
           </div>
