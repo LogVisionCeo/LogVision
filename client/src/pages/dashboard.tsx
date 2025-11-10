@@ -119,8 +119,8 @@ export default function Dashboard() {
               <div className="text-center p-6 md:p-8 rounded-xl bg-gradient-to-br from-destructive/20 via-destructive/10 to-destructive/5 border-2 border-destructive/40 shadow-xl hover-elevate">
                 <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
                   <Leaf className="h-5 w-5 md:h-7 md:w-7 text-destructive" />
-                  <p className="text-sm md:text-base font-bold text-destructive uppercase tracking-wide">
-                    Emissões Totais
+                  <p className="text-sm md:text-base font-bold text-destructive tracking-wide">
+                    Inicie seu cálculo de emissão de carbono
                   </p>
                 </div>
                 <p className="text-4xl md:text-5xl lg:text-6xl font-black font-mono text-destructive mb-2 md:mb-3">12,450 kg</p>
