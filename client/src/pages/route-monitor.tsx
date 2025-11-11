@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 import { RouteMap } from "@/components/route-map";
 import { MapPin, Navigation } from "lucide-react";
 
@@ -11,6 +12,7 @@ export default function RouteMonitor() {
   const [destination, setDestination] = useState("Rio de Janeiro");
   const [tempOrigin, setTempOrigin] = useState("São Paulo");
   const [tempDestination, setTempDestination] = useState("Rio de Janeiro");
+  const [showDirections, setShowDirections] = useState(false);
 
   const handleUpdateRoute = () => {
     setOrigin(tempOrigin);
@@ -73,6 +75,25 @@ export default function RouteMonitor() {
               Atualizar Rota
             </Button>
 
+            <div className="pt-4 border-t space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="space-y-0.5">
+                  <Label htmlFor="show-directions" className="text-sm font-medium">
+                    Orientações de Navegação GPS
+                  </Label>
+                  <p className="text-xs text-muted-foreground">
+                    Mostrar instruções detalhadas da rota
+                  </p>
+                </div>
+                <Switch
+                  id="show-directions"
+                  checked={showDirections}
+                  onCheckedChange={setShowDirections}
+                  data-testid="switch-show-directions"
+                />
+              </div>
+            </div>
+
             <div className="pt-4 border-t space-y-3">
               <h3 className="font-semibold text-sm">Recursos do Mapa</h3>
               <ul className="text-sm text-muted-foreground space-y-2">
@@ -105,7 +126,7 @@ export default function RouteMonitor() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <RouteMap origin={origin} destination={destination} />
+            <RouteMap origin={origin} destination={destination} showDirections={showDirections} />
           </CardContent>
         </Card>
       </div>

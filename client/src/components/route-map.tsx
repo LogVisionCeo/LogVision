@@ -8,9 +8,10 @@ interface RouteMapProps {
   origin: string;
   destination: string;
   className?: string;
+  showDirections?: boolean;
 }
 
-export function RouteMap({ origin, destination, className = '' }: RouteMapProps) {
+export function RouteMap({ origin, destination, className = '', showDirections = false }: RouteMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
 
@@ -95,6 +96,7 @@ export function RouteMap({ origin, destination, className = '' }: RouteMapProps)
           showAlternatives: false,
           addWaypoints: false,
           fitSelectedRoutes: true,
+          show: showDirections,
           lineOptions: {
             styles: [{ 
               color: '#006400',
@@ -128,7 +130,7 @@ export function RouteMap({ origin, destination, className = '' }: RouteMapProps)
     };
 
     updateRoute();
-  }, [origin, destination]);
+  }, [origin, destination, showDirections]);
 
   const switchToSatellite = () => {
     if (!mapInstanceRef.current) return;
