@@ -4,7 +4,7 @@ import { FuelEfficiencyChart } from "@/components/fuel-efficiency-chart";
 import { TripTable } from "@/components/trip-table";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Leaf, Truck, Fuel, TrendingDown, Plus, TreePine } from "lucide-react";
+import { Activity, BarChart3, Zap, Database, Plus, Sparkles, TrendingUp, Route } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Dashboard() {
@@ -57,19 +57,23 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="space-y-8">
-      <div className="bg-gradient-to-r from-primary via-primary/90 to-accent rounded-2xl p-6 md:p-10 shadow-2xl -mx-8 -mt-8 mb-8">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8">
+    <div className="space-y-12">
+      <div className="bg-gradient-to-br from-primary via-primary/95 to-accent/80 rounded-xl p-8 md:p-12 shadow-lg border border-primary/20 -mx-8 -mt-8 mb-12">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex-1">
-            <p className="text-white/85 text-2xl md:text-3xl lg:text-4xl font-bold">
-              Compensação Ambiental através de Árvores
-            </p>
-            <p className="text-white/75 text-lg md:text-xl lg:text-2xl font-medium mt-2 md:mt-3">
-              Rastreamento de carbono e cálculo de árvores necessárias
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-4">
+              <Sparkles className="h-4 w-4 text-white" />
+              <span className="text-white/90 text-sm font-medium">Gestão Inteligente de Carbono</span>
+            </div>
+            <h1 className="text-white text-3xl md:text-4xl font-bold mb-3 tracking-tight">
+              Monitoramento em Tempo Real
+            </h1>
+            <p className="text-white/80 text-base md:text-lg max-w-2xl leading-relaxed">
+              Acompanhe as emissões da sua frota com precisão tecnológica e contribua para um futuro sustentável
             </p>
           </div>
           <Link href="/new-trip">
-            <Button variant="secondary" size="lg" className="bg-card text-primary whitespace-nowrap" data-testid="button-new-trip">
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 whitespace-nowrap shadow-lg" data-testid="button-new-trip">
               <Plus className="mr-2 h-5 w-5" />
               Nova Viagem
             </Button>
@@ -77,11 +81,17 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3">Monitoramento</h2>
-        <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl font-medium">
-          Monitoramento em tempo real da pegada de carbono da sua frota
-        </p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">Visão Geral</h2>
+          <p className="text-muted-foreground text-sm md:text-base">
+            Métricas e indicadores de performance ambiental
+          </p>
+        </div>
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <BarChart3 className="h-4 w-4" />
+          <span>Atualizado agora</span>
+        </div>
       </div>
 
       <Card className="border-4 border-primary bg-primary shadow-lg">
@@ -90,13 +100,13 @@ export default function Dashboard() {
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
               <div className="flex gap-2">
                 <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/20 flex items-center justify-center shadow-lg">
-                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
+                  <Sparkles className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
                 </div>
                 <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/15 flex items-center justify-center shadow-lg -ml-4 md:-ml-6">
-                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
+                  <Sparkles className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
                 </div>
                 <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/10 flex items-center justify-center shadow-lg -ml-4 md:-ml-6">
-                  <TreePine className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
+                  <Sparkles className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
                 </div>
               </div>
               <div className="flex-1 text-center md:text-left md:ml-6">
@@ -118,9 +128,9 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-4 md:pt-6 border-t-2 border-white/20">
               <div className="text-center p-6 md:p-8 rounded-xl bg-destructive/25 border-2 border-destructive/50 shadow-xl hover-elevate">
                 <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
-                  <Leaf className="h-5 w-5 md:h-7 md:w-7 text-destructive" />
+                  <Activity className="h-5 w-5 md:h-7 md:w-7 text-destructive" />
                   <p className="text-sm md:text-base font-bold text-destructive tracking-wide">
-                    Inicie seu cálculo de emissão de carbono
+                    Emissões Totais
                   </p>
                 </div>
                 <p className="text-4xl md:text-5xl lg:text-6xl font-black font-mono text-destructive mb-2 md:mb-3">12,450 kg</p>
@@ -128,7 +138,7 @@ export default function Dashboard() {
               </div>
               <div className="text-center p-6 md:p-8 rounded-xl bg-primary border-2 border-primary shadow-xl hover-elevate">
                 <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
-                  <TreePine className="h-5 w-5 md:h-7 md:w-7 text-white" />
+                  <Sparkles className="h-5 w-5 md:h-7 md:w-7 text-white" />
                   <p className="text-sm md:text-base font-bold text-white uppercase tracking-wide">
                     Capacidade por Árvore
                   </p>
@@ -138,7 +148,7 @@ export default function Dashboard() {
               </div>
               <div className="text-center p-6 md:p-8 rounded-xl bg-primary border-2 border-primary shadow-xl hover-elevate">
                 <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
-                  <TrendingDown className="h-5 w-5 md:h-7 md:w-7 text-white" />
+                  <Zap className="h-5 w-5 md:h-7 md:w-7 text-white" />
                   <p className="text-sm md:text-base font-bold text-white uppercase tracking-wide">
                     Impacto Positivo
                   </p>
@@ -156,28 +166,28 @@ export default function Dashboard() {
           title="Total CO2"
           value="12,450"
           unit="kg"
-          icon={Leaf}
+          icon={Activity}
           trend={{ value: 15, isPositive: true }}
         />
         <StatCard
           title="Distância Total"
           value="45,230"
           unit="km"
-          icon={Truck}
+          icon={Route}
           trend={{ value: 8, isPositive: false }}
         />
         <StatCard
           title="Combustível"
           value="4,892"
           unit="L"
-          icon={Fuel}
+          icon={Database}
           trend={{ value: 12, isPositive: true }}
         />
         <StatCard
           title="Redução de CO2"
           value="2,340"
           unit="kg"
-          icon={TrendingDown}
+          icon={Zap}
           trend={{ value: 23, isPositive: true }}
         />
       </div>
