@@ -9,7 +9,7 @@ import {
   SidebarMenuItem,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { LayoutDashboard, Route, History, FileText, Settings, Map } from "lucide-react";
+import { LayoutDashboard, Plus, Database, BarChart3, Settings, Activity } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 const items = [
@@ -21,22 +21,22 @@ const items = [
   {
     title: "Nova Viagem",
     url: "/new-trip",
-    icon: Route,
+    icon: Plus,
   },
   {
     title: "Histórico",
     url: "/history",
-    icon: History,
+    icon: Database,
   },
   {
     title: "Relatórios",
     url: "/reports",
-    icon: FileText,
+    icon: BarChart3,
   },
   {
     title: "Monitoramento",
     url: "/route-monitor",
-    icon: Map,
+    icon: Activity,
   },
   {
     title: "Configurações",
@@ -50,21 +50,19 @@ export function AppSidebar() {
 
   return (
     <Sidebar>
-      <SidebarHeader className="border-b border-sidebar-border p-4">
-        <div className="flex flex-col gap-3">
-          <div>
-            <h2 className="text-xl md:text-2xl font-bold text-foreground">LogVision</h2>
-          </div>
-          <div className="px-2 py-2 rounded-md bg-primary/10 border border-primary/20">
-            <p className="text-xs md:text-sm font-semibold text-primary leading-tight">
-              Compensação Ambiental através de Árvores
-            </p>
-          </div>
+      <SidebarHeader className="border-b border-sidebar-border p-6">
+        <div className="flex flex-col gap-2">
+          <h2 className="text-2xl font-bold text-primary tracking-tight">LogVision</h2>
+          <p className="text-xs text-muted-foreground font-medium">
+            Gestão Inteligente de Carbono
+          </p>
         </div>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="p-4">
         <SidebarGroup>
-          <SidebarGroupLabel>Menu Principal</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+            Navegação
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
@@ -72,7 +70,7 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild isActive={location === item.url}>
                     <Link href={item.url} data-testid={`link-${item.title.toLowerCase().replace(/\s+/g, '-')}`}>
                       <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
+                      <span className="font-medium">{item.title}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
