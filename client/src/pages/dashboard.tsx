@@ -126,15 +126,15 @@ export default function Dashboard() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-4 md:pt-6 border-t-2 border-white/20">
-              <div className="text-center p-6 md:p-8 rounded-xl bg-destructive/25 border-2 border-destructive/50 shadow-xl hover-elevate">
+              <div className="text-center p-6 md:p-8 rounded-xl bg-primary border-2 border-primary shadow-xl hover-elevate">
                 <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
-                  <Activity className="h-5 w-5 md:h-7 md:w-7 text-destructive" />
-                  <p className="text-sm md:text-base font-bold text-destructive tracking-wide">
+                  <Activity className="h-5 w-5 md:h-7 md:w-7 text-white" />
+                  <p className="text-sm md:text-base font-bold text-white uppercase tracking-wide">
                     Emissões Totais
                   </p>
                 </div>
-                <p className="text-4xl md:text-5xl lg:text-6xl font-black font-mono text-destructive mb-2 md:mb-3">12,450 kg</p>
-                <p className="text-sm md:text-base text-destructive/80 font-semibold mt-2">CO2 este mês</p>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-black font-mono text-white mb-2 md:mb-3">12,450 kg</p>
+                <p className="text-sm md:text-base text-destructive font-semibold mt-2">CO2 este mês</p>
               </div>
               <div className="text-center p-6 md:p-8 rounded-xl bg-primary border-2 border-primary shadow-xl hover-elevate">
                 <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
