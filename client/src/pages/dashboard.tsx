@@ -4,7 +4,7 @@ import { FuelEfficiencyChart } from "@/components/fuel-efficiency-chart";
 import { TripTable } from "@/components/trip-table";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Activity, BarChart3, Zap, Database, Plus, Sparkles, TrendingUp, Route } from "lucide-react";
+import { Activity, BarChart3, Zap, Database, Plus, Trees, TrendingUp, Route } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Dashboard() {
@@ -62,7 +62,7 @@ export default function Dashboard() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex-1">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-4">
-              <Sparkles className="h-4 w-4 text-white" />
+              <Trees className="h-4 w-4 text-white" />
               <span className="text-white/90 text-sm font-medium">Gestão Inteligente de Carbono</span>
             </div>
             <h1 className="text-white text-3xl md:text-4xl font-bold mb-3 tracking-tight">
@@ -100,13 +100,13 @@ export default function Dashboard() {
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
               <div className="flex gap-2">
                 <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/20 flex items-center justify-center shadow-lg">
-                  <Sparkles className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
+                  <Trees className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
                 </div>
                 <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/15 flex items-center justify-center shadow-lg -ml-4 md:-ml-6">
-                  <Sparkles className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
+                  <Trees className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
                 </div>
                 <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/10 flex items-center justify-center shadow-lg -ml-4 md:-ml-6">
-                  <Sparkles className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
+                  <Trees className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
                 </div>
               </div>
               <div className="flex-1 text-center md:text-left md:ml-6">
@@ -138,7 +138,7 @@ export default function Dashboard() {
               </div>
               <div className="text-center p-6 md:p-8 rounded-xl bg-primary border-2 border-primary shadow-xl hover-elevate">
                 <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
-                  <Sparkles className="h-5 w-5 md:h-7 md:w-7 text-white" />
+                  <Trees className="h-5 w-5 md:h-7 md:w-7 text-white" />
                   <p className="text-sm md:text-base font-bold text-white uppercase tracking-wide">
                     Capacidade por Árvore
                   </p>
