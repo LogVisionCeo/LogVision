@@ -1,8 +1,26 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Trees, Droplets, Target, Leaf, Map, BarChart3, TrendingUp, Sprout, Waves } from "lucide-react";
 import areaImage from "@assets/Captura de tela 2025-11-12 094029_1762951706488.png";
+import camboataImg from "@assets/stock_images/camboatá_cupania_ver_9808d536.jpg";
+import capixinguiImg from "@assets/stock_images/capixingui_croton_fl_d3fea44d.jpg";
+import guaimirimImg from "@assets/stock_images/guaimirim_eugenia_ce_2f7b7524.jpg";
+import pessegueiroImg from "@assets/stock_images/pessegueiro-bravo_eu_2d22fd80.jpg";
+import mariaMoleImg from "@assets/stock_images/maria-mole_guapira_o_ac4c2fe5.jpg";
+import mangueVermelhoImg from "@assets/stock_images/red_mangrove_rhizoph_2f668dd9.jpg";
+import manguePretoImg from "@assets/stock_images/black_mangrove_avice_7f426c7b.jpg";
+import mangueBrancoImg from "@assets/stock_images/white_mangrove_lagun_e310bdff.jpg";
+
+interface Species {
+  name: string;
+  scientificName: string;
+  description: string;
+  image: string;
+}
 
 export default function ReplantingMap() {
+  const [selectedSpecies, setSelectedSpecies] = useState<Species | null>(null);
   const droneCapacity = 20000;
   const successRate = 0.6;
   const areaSize = 10.44;
@@ -285,35 +303,80 @@ export default function ReplantingMap() {
             </div>
 
             <div className="space-y-3">
-              <div className="p-3 border rounded-lg">
+              <div 
+                className="p-3 border rounded-lg hover-elevate cursor-pointer transition-all"
+                onClick={() => setSelectedSpecies({
+                  name: "Camboatá",
+                  scientificName: "Cupania vernalis",
+                  description: "Resistente e eficiente na absorção de CO₂",
+                  image: camboataImg
+                })}
+                data-testid="species-camboata"
+              >
                 <h4 className="font-semibold text-sm mb-1">Camboatá <span className="text-muted-foreground font-normal italic">(Cupania vernalis)</span></h4>
                 <p className="text-sm text-muted-foreground">
                   Resistente e eficiente na absorção de CO₂
                 </p>
               </div>
 
-              <div className="p-3 border rounded-lg">
+              <div 
+                className="p-3 border rounded-lg hover-elevate cursor-pointer transition-all"
+                onClick={() => setSelectedSpecies({
+                  name: "Capixingui",
+                  scientificName: "Croton floribundus",
+                  description: "Tolerante ao estresse e ao estresse urbano",
+                  image: capixinguiImg
+                })}
+                data-testid="species-capixingui"
+              >
                 <h4 className="font-semibold text-sm mb-1">Capixingui <span className="text-muted-foreground font-normal italic">(Croton floribundus)</span></h4>
                 <p className="text-sm text-muted-foreground">
                   Tolerante ao estresse e ao estresse urbano
                 </p>
               </div>
 
-              <div className="p-3 border rounded-lg">
+              <div 
+                className="p-3 border rounded-lg hover-elevate cursor-pointer transition-all"
+                onClick={() => setSelectedSpecies({
+                  name: "Guaimirim",
+                  scientificName: "Eugenia cerasiflora",
+                  description: "Contribui significativamente para a absorção de carbono",
+                  image: guaimirimImg
+                })}
+                data-testid="species-guaimirim"
+              >
                 <h4 className="font-semibold text-sm mb-1">Guaimirim <span className="text-muted-foreground font-normal italic">(Eugenia cerasiflora)</span></h4>
                 <p className="text-sm text-muted-foreground">
                   Contribui significativamente para a absorção de carbono
                 </p>
               </div>
 
-              <div className="p-3 border rounded-lg">
+              <div 
+                className="p-3 border rounded-lg hover-elevate cursor-pointer transition-all"
+                onClick={() => setSelectedSpecies({
+                  name: "Pessegueiro-bravo",
+                  scientificName: "Eugenia excelsa",
+                  description: "Importante para a regulação do clima",
+                  image: pessegueiroImg
+                })}
+                data-testid="species-pessegueiro"
+              >
                 <h4 className="font-semibold text-sm mb-1">Pessegueiro-bravo <span className="text-muted-foreground font-normal italic">(Eugenia excelsa)</span></h4>
                 <p className="text-sm text-muted-foreground">
                   Importante para a regulação do clima
                 </p>
               </div>
 
-              <div className="p-3 border rounded-lg">
+              <div 
+                className="p-3 border rounded-lg hover-elevate cursor-pointer transition-all"
+                onClick={() => setSelectedSpecies({
+                  name: "Maria-mole",
+                  scientificName: "Guapira opposita",
+                  description: "Resiliente e eficaz na absorção de CO₂",
+                  image: mariaMoleImg
+                })}
+                data-testid="species-maria-mole"
+              >
                 <h4 className="font-semibold text-sm mb-1">Maria-mole <span className="text-muted-foreground font-normal italic">(Guapira opposita)</span></h4>
                 <p className="text-sm text-muted-foreground">
                   Resiliente e eficaz na absorção de CO₂
@@ -398,7 +461,16 @@ export default function ReplantingMap() {
                 Espécies de Manguezais
               </h4>
               <div className="space-y-3">
-                <div className="p-3 border rounded-lg bg-muted/30">
+                <div 
+                  className="p-3 border rounded-lg bg-muted/30 hover-elevate cursor-pointer transition-all"
+                  onClick={() => setSelectedSpecies({
+                    name: "Mangue-vermelho",
+                    scientificName: "Rhizophora mangle",
+                    description: "Também conhecido como mangue-sapateiro",
+                    image: mangueVermelhoImg
+                  })}
+                  data-testid="species-mangue-vermelho"
+                >
                   <h4 className="font-semibold text-sm mb-1">
                     Mangue-vermelho <span className="text-muted-foreground font-normal italic">(Rhizophora mangle)</span>
                   </h4>
@@ -407,7 +479,16 @@ export default function ReplantingMap() {
                   </p>
                 </div>
 
-                <div className="p-3 border rounded-lg bg-muted/30">
+                <div 
+                  className="p-3 border rounded-lg bg-muted/30 hover-elevate cursor-pointer transition-all"
+                  onClick={() => setSelectedSpecies({
+                    name: "Mangue-preto",
+                    scientificName: "Avicennia schaueriana",
+                    description: "Também conhecido como siriúba ou seriba",
+                    image: manguePretoImg
+                  })}
+                  data-testid="species-mangue-preto"
+                >
                   <h4 className="font-semibold text-sm mb-1">
                     Mangue-preto <span className="text-muted-foreground font-normal italic">(Avicennia schaueriana)</span>
                   </h4>
@@ -416,7 +497,16 @@ export default function ReplantingMap() {
                   </p>
                 </div>
 
-                <div className="p-3 border rounded-lg bg-muted/30">
+                <div 
+                  className="p-3 border rounded-lg bg-muted/30 hover-elevate cursor-pointer transition-all"
+                  onClick={() => setSelectedSpecies({
+                    name: "Mangue-branco",
+                    scientificName: "Laguncularia racemosa",
+                    description: "Também conhecido como tinteira",
+                    image: mangueBrancoImg
+                  })}
+                  data-testid="species-mangue-branco"
+                >
                   <h4 className="font-semibold text-sm mb-1">
                     Mangue-branco <span className="text-muted-foreground font-normal italic">(Laguncularia racemosa)</span>
                   </h4>
@@ -429,6 +519,34 @@ export default function ReplantingMap() {
           </CardContent>
         </Card>
       </div>
+
+      <Dialog open={!!selectedSpecies} onOpenChange={(open) => !open && setSelectedSpecies(null)}>
+        <DialogContent className="max-w-3xl" data-testid="dialog-species">
+          {selectedSpecies && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl">
+                  {selectedSpecies.name}
+                </DialogTitle>
+                <p className="text-muted-foreground italic">{selectedSpecies.scientificName}</p>
+              </DialogHeader>
+              <div className="space-y-4">
+                <div className="rounded-lg overflow-hidden border">
+                  <img 
+                    src={selectedSpecies.image} 
+                    alt={`${selectedSpecies.name} (${selectedSpecies.scientificName})`}
+                    className="w-full h-auto max-h-96 object-cover"
+                    data-testid="img-species"
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  {selectedSpecies.description}
+                </p>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
