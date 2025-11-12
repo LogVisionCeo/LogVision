@@ -13,6 +13,7 @@ import History from "@/pages/history";
 import Reports from "@/pages/reports";
 import Settings from "@/pages/settings";
 import RouteMonitor from "@/pages/route-monitor";
+import ReplantingMap from "@/pages/replanting-map";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/history" component={History} />
       <Route path="/reports" component={Reports} />
       <Route path="/route-monitor" component={RouteMonitor} />
+      <Route path="/replanting-map" component={ReplantingMap} />
       <Route path="/settings" component={Settings} />
       <Route component={NotFound} />
     </Switch>

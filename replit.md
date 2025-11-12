@@ -2,7 +2,7 @@
 
 ## Overview
 
-LogVision is a comprehensive carbon footprint tracking application designed for fleet management and logistics companies. The application enables users to track, analyze, and reduce CO2 emissions from truck transportation by monitoring fuel consumption, distance traveled, cargo weight, and vehicle types. It provides real-time route monitoring with satellite imagery, detailed emissions analytics, sustainability reports, and actionable recommendations for reducing environmental impact.
+LogVision is a comprehensive carbon footprint tracking application designed for fleet management and logistics companies. The application enables users to track, analyze, and reduce CO2 emissions from truck transportation by monitoring fuel consumption, distance traveled, cargo weight, and vehicle types. It provides real-time route monitoring with satellite imagery, detailed emissions analytics, sustainability reports, drone-based replanting mapping functionality, and actionable recommendations for reducing environmental impact.
 
 ## User Preferences
 
@@ -34,6 +34,7 @@ Preferred communication style: Simple, everyday language.
 - **Recharts** for data visualization (emissions trends, fuel efficiency charts, comparative analytics)
 - **Leaflet** with OpenStreetMap integration for route mapping and satellite imagery
 - Custom chart components for emissions tracking and fuel consumption analysis
+- Replanting map visualization with drone capacity metrics and area analysis
 
 ### Backend Architecture
 
@@ -54,6 +55,13 @@ Preferred communication style: Simple, everyday language.
   - Emission factors by fuel type (diesel: 2.68, biodiesel: 1.8, electric: 0.2 kg CO2/L)
   - Weight-based consumption adjustments
   - Carbon offset calculations (trees needed based on 22kg CO2/tree/year)
+- Replanting calculations for drone-based reforestation:
+  - Drone capacity: 20,000 capsules per operation
+  - Success rate: 60% germination effectiveness
+  - Area coverage: 10.44 km² replanting zone
+  - Effective trees: 12,000 trees (capacity × success rate)
+  - Tree density: 1,149 trees/km²
+  - Annual CO₂ offset: 264 tonnes (12,000 trees × 22kg/tree/year)
 
 ### Data Storage
 
@@ -112,7 +120,7 @@ Currently not implemented - the application uses a basic user storage interface 
 ### Design System & Theming
 
 **Color Palette Strategy**
-- Sophisticated forest green primary color (150 45% 45%) avoiding "eco-friendly cliché"
+- Sophisticated emerald green primary color (#059669 / HSL 158 94% 30%) for professional environmental branding
 - Dark mode as primary interface with optional light mode
 - HSL color system with CSS custom properties for theme switching
 - Specialized colors for environmental indicators (success, warning, danger)
@@ -127,3 +135,26 @@ Currently not implemented - the application uses a basic user storage interface 
 - Consistent border radius system (3px, 6px, 9px)
 - Shadow system for depth and hierarchy
 - Hover and active states with elevation effects
+
+## Application Features
+
+### Core Features
+1. **Dashboard** - Real-time overview of emissions, trips, and environmental impact
+2. **Trip Management** - Add, track, and analyze individual truck trips
+3. **Historical Data** - Browse and filter past trips with detailed metrics
+4. **Reports** - Generate sustainability reports and emissions analytics
+5. **Route Monitoring** - Real-time route visualization with satellite imagery and GPS navigation toggle
+6. **Replanting Map** - Drone-based reforestation tracking with area visualization and impact calculations
+7. **Settings** - Application configuration and preferences
+
+### Recent Updates (November 2025)
+- Fixed primary color system to exact #059669 emerald green across all themes
+- Replaced Sparkles icons with Trees icons throughout the dashboard
+- Redesigned "Emissões Totais" card with consistent green background
+- Implemented GPS navigation directions toggle in route monitoring
+- Added comprehensive "Mapeamento de Replantio" section with:
+  - 10.44 km² area visualization with imported satellite imagery
+  - Drone specifications (20,000 capsule capacity, 60% success rate)
+  - Automated calculations for effective trees, density, and CO₂ offset
+  - Three-step methodology visualization (mapping, capsule deployment, monitoring)
+  - Annual environmental impact metrics (264 tonnes CO₂ compensation)

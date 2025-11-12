@@ -9,7 +9,7 @@ import {
   SidebarMenuItem,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { LayoutDashboard, Plus, Database, BarChart3, Settings, Activity } from "lucide-react";
+import { LayoutDashboard, Plus, Database, BarChart3, Settings, Activity, Trees } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 const items = [
@@ -37,6 +37,11 @@ const items = [
     title: "Monitoramento",
     url: "/route-monitor",
     icon: Activity,
+  },
+  {
+    title: "Mapeamento de Replantio",
+    url: "/replanting-map",
+    icon: Trees,
   },
   {
     title: "Configurações",
