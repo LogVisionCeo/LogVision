@@ -29,9 +29,9 @@ export default function Reports() {
   ];
 
   const COLORS = [
-    "#8B5CF6",
-    "#06B6D4",
-    "#F59E0B",
+    "hsl(var(--chart-1))",
+    "hsl(var(--chart-2))",
+    "hsl(var(--chart-3))",
   ];
 
   const savingsData = {
@@ -103,39 +103,39 @@ export default function Reports() {
             <CardDescription>Principais métricas de sustentabilidade</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="flex items-center justify-between p-4 rounded-lg bg-emerald-50 dark:bg-emerald-950/20 border-2 border-emerald-500">
+            <div className="flex items-center justify-between p-4 rounded-lg bg-primary border-2 border-primary">
               <div>
-                <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400">Redução de CO2</p>
-                <p className="text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-500">
+                <p className="text-sm font-semibold text-primary-foreground">Redução de CO2</p>
+                <p className="text-2xl font-bold font-mono text-primary-foreground">
                   {savingsData.co2Reduced} kg
                 </p>
               </div>
-              <TrendingDown className="h-8 w-8 text-emerald-600 dark:text-emerald-500" />
+              <TrendingDown className="h-8 w-8 text-primary-foreground" />
             </div>
-            <div className="flex items-center justify-between p-4 rounded-lg bg-blue-50 dark:bg-blue-950/20 border-2 border-blue-500">
+            <div className="flex items-center justify-between p-4 rounded-lg border-2 bg-[hsl(var(--chart-2))] border-[hsl(var(--chart-2))]">
               <div>
-                <p className="text-sm font-semibold text-blue-700 dark:text-blue-400">Combustível Economizado</p>
-                <p className="text-2xl font-bold font-mono text-blue-600 dark:text-blue-500">
+                <p className="text-sm font-semibold text-primary-foreground">Combustível Economizado</p>
+                <p className="text-2xl font-bold font-mono text-primary-foreground">
                   {savingsData.fuelSaved} L
                 </p>
               </div>
-              <TrendingDown className="h-8 w-8 text-blue-600 dark:text-blue-500" />
+              <TrendingDown className="h-8 w-8 text-primary-foreground" />
             </div>
-            <div className="flex items-center justify-between p-4 rounded-lg bg-amber-50 dark:bg-amber-950/20 border-2 border-amber-500">
+            <div className="flex items-center justify-between p-4 rounded-lg border-2 bg-[hsl(var(--chart-3))] border-[hsl(var(--chart-3))]">
               <div>
-                <p className="text-sm font-semibold text-amber-700 dark:text-amber-400">Economia Financeira</p>
-                <p className="text-2xl font-bold font-mono text-amber-600 dark:text-amber-500">
+                <p className="text-sm font-semibold text-primary-foreground">Economia Financeira</p>
+                <p className="text-2xl font-bold font-mono text-primary-foreground">
                   R$ {savingsData.costSavings.toLocaleString('pt-BR')}
                 </p>
               </div>
-              <TrendingDown className="h-8 w-8 text-amber-600 dark:text-amber-500" />
+              <TrendingDown className="h-8 w-8 text-primary-foreground" />
             </div>
-            <div className="p-4 rounded-lg border-2 border-purple-500 bg-purple-50 dark:bg-purple-950/20">
-              <p className="text-sm font-semibold text-purple-700 dark:text-purple-400 mb-1">Equivalente Ambiental</p>
-              <p className="text-lg font-bold text-purple-600 dark:text-purple-500">
+            <div className="p-4 rounded-lg border-2 bg-[hsl(var(--chart-4))] border-[hsl(var(--chart-4))]">
+              <p className="text-sm font-semibold mb-1 text-primary-foreground">Equivalente Ambiental</p>
+              <p className="text-lg font-bold text-primary-foreground">
                 {savingsData.treesEquivalent} árvores plantadas
               </p>
-              <p className="text-xs text-purple-600 dark:text-purple-400 mt-1">
+              <p className="text-xs mt-1 text-primary-foreground">
                 Baseado na absorção média de CO2 por árvore/ano
               </p>
             </div>
@@ -215,32 +215,32 @@ export default function Reports() {
                 }}
                 labelStyle={{ color: "hsl(var(--foreground))" }}
               />
-              <Bar dataKey="emissions" fill="#EC4899" radius={[8, 8, 0, 0]} name="CO2 (kg)" />
-              <Bar dataKey="fuel" fill="#10B981" radius={[8, 8, 0, 0]} name="Combustível (L)" />
+              <Bar dataKey="emissions" fill="hsl(var(--chart-1))" radius={[8, 8, 0, 0]} name="CO2 (kg)" />
+              <Bar dataKey="fuel" fill="hsl(var(--chart-3))" radius={[8, 8, 0, 0]} name="Combustível (L)" />
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            <div className="p-4 rounded-lg bg-pink-50 dark:bg-pink-950/20 border-2 border-pink-500">
+            <div className="p-4 rounded-lg bg-primary border-2 border-primary">
               <div className="flex items-center justify-between mb-2">
-                <p className="text-sm font-semibold text-pink-700 dark:text-pink-400">Variação de Emissões</p>
-                <Badge className="bg-pink-600 text-white dark:bg-pink-500">
+                <p className="text-sm font-semibold text-primary-foreground">Variação de Emissões</p>
+                <Badge className="bg-primary-foreground text-primary">
                   <TrendingDown className="h-3 w-3 mr-1" />
                   -15%
                 </Badge>
               </div>
-              <p className="text-xs text-pink-600 dark:text-pink-400 font-medium">
+              <p className="text-xs text-primary-foreground font-medium">
                 Redução significativa comparado ao período anterior
               </p>
             </div>
-            <div className="p-4 rounded-lg bg-teal-50 dark:bg-teal-950/20 border-2 border-teal-500">
+            <div className="p-4 rounded-lg bg-[hsl(var(--chart-3))] border-2 border-[hsl(var(--chart-3))]">
               <div className="flex items-center justify-between mb-2">
-                <p className="text-sm font-semibold text-teal-700 dark:text-teal-400">Variação de Combustível</p>
-                <Badge className="bg-teal-600 text-white dark:bg-teal-500">
+                <p className="text-sm font-semibold text-primary-foreground">Variação de Combustível</p>
+                <Badge className="bg-primary-foreground text-primary">
                   <TrendingDown className="h-3 w-3 mr-1" />
                   -13%
                 </Badge>
               </div>
-              <p className="text-xs text-teal-600 dark:text-teal-400 font-medium">
+              <p className="text-xs font-medium text-primary-foreground">
                 Economia significativa no consumo total
               </p>
             </div>
@@ -256,21 +256,21 @@ export default function Reports() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 rounded-lg border-l-4 border-l-indigo-500 bg-indigo-50 dark:bg-indigo-950/20">
-            <p className="font-bold mb-1 text-indigo-700 dark:text-indigo-400">Otimização de Rotas</p>
-            <p className="text-sm text-indigo-600 dark:text-indigo-400">
+          <div className="p-4 rounded-lg border-2 bg-primary border-primary">
+            <p className="font-bold mb-1 text-primary-foreground">Otimização de Rotas</p>
+            <p className="text-sm text-primary-foreground">
               Implementar sistema de roteirização inteligente pode reduzir até 18% das emissões
             </p>
           </div>
-          <div className="p-4 rounded-lg border-l-4 border-l-cyan-500 bg-cyan-50 dark:bg-cyan-950/20">
-            <p className="font-bold mb-1 text-cyan-700 dark:text-cyan-400">Renovação de Frota</p>
-            <p className="text-sm text-cyan-600 dark:text-cyan-400">
+          <div className="p-4 rounded-lg border-2 bg-[hsl(var(--chart-2))] border-[hsl(var(--chart-2))]">
+            <p className="font-bold mb-1 text-primary-foreground">Renovação de Frota</p>
+            <p className="text-sm text-primary-foreground">
               Substituir 30% da frota por veículos elétricos ou híbridos reduziria 45% das emissões
             </p>
           </div>
-          <div className="p-4 rounded-lg border-l-4 border-l-rose-500 bg-rose-50 dark:bg-rose-950/20">
-            <p className="font-bold mb-1 text-rose-700 dark:text-rose-400">Treinamento de Condutores</p>
-            <p className="text-sm text-rose-600 dark:text-rose-400">
+          <div className="p-4 rounded-lg border-2 bg-[hsl(var(--chart-3))] border-[hsl(var(--chart-3))]">
+            <p className="font-bold mb-1 text-primary-foreground">Treinamento de Condutores</p>
+            <p className="text-sm text-primary-foreground">
               Programa de eco-driving pode melhorar a eficiência de combustível em até 12%
             </p>
           </div>
