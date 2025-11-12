@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/sidebar";
 import { LayoutDashboard, Plus, Database, BarChart3, Settings, Activity, Trees } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import logoImage from "@assets/Design sem nome (2)_1762957674679.png";
 
 const items = [
   {
@@ -56,11 +57,19 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader className="border-b border-sidebar-border p-6">
-        <div className="flex flex-col gap-2">
-          <h2 className="text-2xl font-bold text-primary tracking-tight">LogVision</h2>
-          <p className="text-xs text-muted-foreground font-medium">
-            Gestão Inteligente de Carbono
-          </p>
+        <div className="flex flex-col gap-3">
+          <img 
+            src={logoImage} 
+            alt="LogVision Logo" 
+            className="h-16 w-auto object-contain"
+            data-testid="img-logo"
+          />
+          <div className="flex flex-col gap-1">
+            <h2 className="text-2xl font-bold text-primary tracking-tight">LogVision</h2>
+            <p className="text-xs text-muted-foreground font-medium">
+              Gestão Inteligente de Carbono
+            </p>
+          </div>
         </div>
       </SidebarHeader>
       <SidebarContent className="p-4">

@@ -132,7 +132,7 @@ Currently not implemented - the application uses a basic user storage interface 
 ### Design System & Theming
 
 **Color Palette Strategy**
-- Sophisticated dark green primary color (#2c4117 / HSL 90 48% 17%) for professional environmental branding
+- Sophisticated vibrant green primary color (#17620C / HSL 112 78% 22%) for professional environmental branding
 - Dark mode as primary interface with optional light mode
 - HSL color system with CSS custom properties for theme switching
 - Specialized colors for environmental indicators (success, warning, danger)
@@ -160,7 +160,8 @@ Currently not implemented - the application uses a basic user storage interface 
 7. **Settings** - Application configuration and preferences
 
 ### Recent Updates (November 2025)
-- Updated primary color system to dark green (#2c4117 / HSL 90 48% 17%) across all themes
+- Updated primary color system to vibrant green (#17620C / HSL 112 78% 22%) across all themes
+- Added LogVision logo to sidebar header with tree and roots design
 - Replaced Sparkles icons with Trees icons throughout the dashboard
 - Redesigned "Emissões Totais" card with consistent green background
 - Implemented GPS navigation directions toggle in route monitoring
