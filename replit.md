@@ -160,7 +160,9 @@ Currently not implemented - the application uses a basic user storage interface 
 7. **Settings** - Application configuration and preferences
 
 ### Recent Updates (November 2025)
-- Updated primary color system to vibrant green (#17620C / HSL 112 78% 22%) across all themes
+- Updated primary color system to vibrant green (#17620C / HSL 112 78% 22%) across all themes with WCAG AA compliant contrast ratios
+- Fixed dark mode contrast issues on Reports page by implementing proper theme-aware foreground tokens
+- Adjusted chart color variables to ensure ≥4.5:1 contrast ratio in both light and dark themes
 - Added LogVision logo to sidebar header with tree and roots design
 - Replaced Sparkles icons with Trees icons throughout the dashboard
 - Redesigned "Emissões Totais" card with consistent green background
@@ -172,3 +174,6 @@ Currently not implemented - the application uses a basic user storage interface 
   - Three-step methodology visualization (mapping, capsule deployment, monitoring)
   - Annual environmental impact metrics (264 tonnes CO₂ compensation)
   - Species information: Mata Atlântica (5 species) and Mangrove ecosystems (3 species)
+  - Interactive species cards with stock images displayed on click via Dialog component
+  - Each species card shows: common name, scientific name, description, and high-quality photograph
+  - All 8 species (5 Atlantic Forest + 3 Mangrove) have dedicated stock images
