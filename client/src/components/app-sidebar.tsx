@@ -57,7 +57,7 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader className="border-b border-sidebar-border p-6">
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 items-center text-center">
           <img 
             src={logoImage} 
             alt="LogVision Logo" 
