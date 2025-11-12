@@ -9,7 +9,7 @@
 - Technology-forward sophistication over traditional "eco" aesthetics
 - Data-first clarity with refined visual hierarchy
 - Generous whitespace and breathing room
-- Professional emerald green (#059669) as innovation signal
+- Professional dark green (#2c4117) as innovation signal
 - Elegant simplicity for corporate fleet managers
 
 ---
@@ -83,7 +83,7 @@
 - Heatmap: Emissions by day of week/hour
 
 **Buttons:**
-- Primary: Emerald green, rounded-lg, px-6 py-3.5, font-medium
+- Primary: Dark green, rounded-lg, px-6 py-3.5, font-medium
 - Secondary: Outlined variant, border-2
 - Ghost: Minimal, hover background only
 - Icon buttons: rounded-full, subtle hover lift
@@ -173,7 +173,7 @@
 - Dark mode as default with light mode toggle
 - WCAG AA contrast minimum (prefer AAA where possible)
 - Keyboard navigation throughout
-- Focus indicators: 2px emerald ring with offset
+- Focus indicators: 2px dark green ring with offset
 - Loading states always visible (never blank screens)
 - Error states with clear recovery actions
 - Consistent form input styling in both themes

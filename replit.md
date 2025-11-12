@@ -132,7 +132,7 @@ Currently not implemented - the application uses a basic user storage interface 
 ### Design System & Theming
 
 **Color Palette Strategy**
-- Sophisticated emerald green primary color (#059669 / HSL 158 94% 30%) for professional environmental branding
+- Sophisticated dark green primary color (#2c4117 / HSL 90 48% 17%) for professional environmental branding
 - Dark mode as primary interface with optional light mode
 - HSL color system with CSS custom properties for theme switching
 - Specialized colors for environmental indicators (success, warning, danger)
@@ -160,7 +160,7 @@ Currently not implemented - the application uses a basic user storage interface 
 7. **Settings** - Application configuration and preferences
 
 ### Recent Updates (November 2025)
-- Fixed primary color system to exact #059669 emerald green across all themes
+- Updated primary color system to dark green (#2c4117 / HSL 90 48% 17%) across all themes
 - Replaced Sparkles icons with Trees icons throughout the dashboard
 - Redesigned "Emissões Totais" card with consistent green background
 - Implemented GPS navigation directions toggle in route monitoring
@@ -170,3 +170,4 @@ Currently not implemented - the application uses a basic user storage interface 
   - Automated calculations for effective trees, density, and CO₂ offset
   - Three-step methodology visualization (mapping, capsule deployment, monitoring)
   - Annual environmental impact metrics (264 tonnes CO₂ compensation)
+  - Species information: Mata Atlântica (5 species) and Mangrove ecosystems (3 species)
