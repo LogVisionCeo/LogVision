@@ -62,6 +62,18 @@ Preferred communication style: Simple, everyday language.
   - Effective trees: 12,000 trees (capacity × success rate)
   - Tree density: 1,149 trees/km²
   - Annual CO₂ offset: 264 tonnes (12,000 trees × 22kg/tree/year)
+- Native species for reforestation:
+  - **Mata Atlântica species** (163.14 kg CO₂/tree over 20 years):
+    - Camboatá (Cupania vernalis) - Resistant and efficient in CO₂ absorption
+    - Capixingui (Croton floribundus) - Stress-tolerant and urban-adapted
+    - Guaimirim (Eugenia cerasiflora) - Significant carbon absorption contributor
+    - Pessegueiro-bravo (Eugenia excelsa) - Important for climate regulation
+    - Maria-mole (Guapira opposita) - Resilient and effective in CO₂ absorption
+  - **Mangrove species** (4-6× more carbon storage than conventional forests):
+    - Mangue-vermelho/Rhizophora mangle (Red mangrove, mangue-sapateiro)
+    - Mangue-preto/Avicennia schaueriana (Black mangrove, siriúba, seriba)
+    - Mangue-branco/Laguncularia racemosa (White mangrove, tinteira)
+  - Mangrove carbon storage: 2× more carbon per hectare than forests, 85% stored in soil for centuries
 
 ### Data Storage
 

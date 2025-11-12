@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Trees, Droplets, Target, Leaf, Map, BarChart3, TrendingUp } from "lucide-react";
+import { Trees, Droplets, Target, Leaf, Map, BarChart3, TrendingUp, Sprout, Waves } from "lucide-react";
 import areaImage from "@assets/Captura de tela 2025-11-12 094029_1762951706488.png";
 
 export default function ReplantingMap() {
@@ -260,6 +260,175 @@ export default function ReplantingMap() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Sprout className="h-5 w-5" />
+              Espécies da Mata Atlântica
+            </CardTitle>
+            <CardDescription>
+              Espécies nativas selecionadas para o reflorestamento
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
+              <div className="flex items-center gap-2 mb-3">
+                <Trees className="h-4 w-4 text-primary" />
+                <span className="font-semibold text-sm">Absorção Média por Árvore</span>
+              </div>
+              <div className="flex items-end gap-2">
+                <span className="text-3xl font-bold font-mono text-primary">163,14 kg</span>
+                <span className="text-sm text-muted-foreground mb-1">de CO₂ em 20 anos</span>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <div className="p-3 border rounded-lg">
+                <h4 className="font-semibold text-sm mb-1">Camboatá <span className="text-muted-foreground font-normal italic">(Cupania vernalis)</span></h4>
+                <p className="text-sm text-muted-foreground">
+                  Resistente e eficiente na absorção de CO₂
+                </p>
+              </div>
+
+              <div className="p-3 border rounded-lg">
+                <h4 className="font-semibold text-sm mb-1">Capixingui <span className="text-muted-foreground font-normal italic">(Croton floribundus)</span></h4>
+                <p className="text-sm text-muted-foreground">
+                  Tolerante ao estresse e ao estresse urbano
+                </p>
+              </div>
+
+              <div className="p-3 border rounded-lg">
+                <h4 className="font-semibold text-sm mb-1">Guaimirim <span className="text-muted-foreground font-normal italic">(Eugenia cerasiflora)</span></h4>
+                <p className="text-sm text-muted-foreground">
+                  Contribui significativamente para a absorção de carbono
+                </p>
+              </div>
+
+              <div className="p-3 border rounded-lg">
+                <h4 className="font-semibold text-sm mb-1">Pessegueiro-bravo <span className="text-muted-foreground font-normal italic">(Eugenia excelsa)</span></h4>
+                <p className="text-sm text-muted-foreground">
+                  Importante para a regulação do clima
+                </p>
+              </div>
+
+              <div className="p-3 border rounded-lg">
+                <h4 className="font-semibold text-sm mb-1">Maria-mole <span className="text-muted-foreground font-normal italic">(Guapira opposita)</span></h4>
+                <p className="text-sm text-muted-foreground">
+                  Resiliente e eficaz na absorção de CO₂
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Waves className="h-5 w-5" />
+              Ecossistemas de Manguezais
+            </CardTitle>
+            <CardDescription>
+              Potencial excepcional de armazenamento de carbono
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
+              <h4 className="font-semibold text-sm mb-3 flex items-center gap-2">
+                <TrendingUp className="h-4 w-4 text-primary" />
+                Capacidade Superior
+              </h4>
+              <p className="text-sm text-muted-foreground mb-4">
+                Os manguezais são ecossistemas que absorvem mais carbono do que as florestas convencionais.
+              </p>
+              <div className="flex items-end gap-2">
+                <span className="text-3xl font-bold font-mono text-primary">4 a 6×</span>
+                <span className="text-sm text-muted-foreground mb-1">mais carbono que florestas</span>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <div className="p-3 border rounded-lg">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Leaf className="h-3 w-3 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Estoque de Carbono</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Cada hectare de manguezal contém uma quantidade de carbono <strong>duas vezes maior</strong> que a mesma área de floresta
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-3 border rounded-lg">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <BarChart3 className="h-3 w-3 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Estrutura de Carbono</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Cerca de <strong>85% do carbono</strong> armazenado nos manguezais está localizado nos solos, onde permanece por séculos
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-3 border rounded-lg">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Trees className="h-3 w-3 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Comparação com Florestas</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Armazenam de 4 a 6 vezes mais carbono que florestas tropicais, boreais e temperadas
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 pt-4 border-t">
+              <h4 className="font-semibold text-sm mb-3 flex items-center gap-2">
+                <Sprout className="h-4 w-4 text-primary" />
+                Espécies de Manguezais
+              </h4>
+              <div className="space-y-3">
+                <div className="p-3 border rounded-lg bg-muted/30">
+                  <h4 className="font-semibold text-sm mb-1">
+                    Mangue-vermelho <span className="text-muted-foreground font-normal italic">(Rhizophora mangle)</span>
+                  </h4>
+                  <p className="text-xs text-muted-foreground">
+                    Também conhecido como mangue-sapateiro
+                  </p>
+                </div>
+
+                <div className="p-3 border rounded-lg bg-muted/30">
+                  <h4 className="font-semibold text-sm mb-1">
+                    Mangue-preto <span className="text-muted-foreground font-normal italic">(Avicennia schaueriana)</span>
+                  </h4>
+                  <p className="text-xs text-muted-foreground">
+                    Também conhecido como siriúba ou seriba
+                  </p>
+                </div>
+
+                <div className="p-3 border rounded-lg bg-muted/30">
+                  <h4 className="font-semibold text-sm mb-1">
+                    Mangue-branco <span className="text-muted-foreground font-normal italic">(Laguncularia racemosa)</span>
+                  </h4>
+                  <p className="text-xs text-muted-foreground">
+                    Também conhecido como tinteira
+                  </p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }
