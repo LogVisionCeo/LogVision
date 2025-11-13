@@ -66,9 +66,9 @@ Preferred communication style: Simple, everyday language.
   - **Mata Atlântica species** (163.14 kg CO₂/tree over 20 years):
     - Camboatá (Cupania vernalis) - Resistant and efficient in CO₂ absorption
     - Capixingui (Croton floribundus) - Stress-tolerant and urban-adapted
-    - Guaimirim (Eugenia cerasiflora) - Significant carbon absorption contributor
-    - Pessegueiro-bravo (Eugenia excelsa) - Important for climate regulation
-    - Maria-mole (Guapira opposita) - Resilient and effective in CO₂ absorption
+    - Guaimirim Cravo (Eugenia cerasiflora) - Significant carbon absorption contributor
+    - Embaúba (Cecropia sp.) - Pioneer species with rapid growth and high regeneration capacity
+    - Cinzeiro (Erisma uncinatum Warm) - Large tree with quality wood and important ecological function
   - **Mangrove species** (4-6× more carbon storage than conventional forests):
     - Mangue-vermelho/Rhizophora mangle (Red mangrove, mangue-sapateiro)
     - Mangue-preto/Avicennia schaueriana (Black mangrove, siriúba, seriba)
@@ -174,6 +174,8 @@ Currently not implemented - the application uses a basic user storage interface 
   - Three-step methodology visualization (mapping, capsule deployment, monitoring)
   - Annual environmental impact metrics (264 tonnes CO₂ compensation)
   - Species information: Mata Atlântica (5 species) and Mangrove ecosystems (3 species)
-  - Interactive species cards with stock images displayed on click via Dialog component
+  - Interactive species cards with custom images displayed on click via Dialog component
   - Each species card shows: common name, scientific name, description, and high-quality photograph
-  - All 8 species (5 Atlantic Forest + 3 Mangrove) have dedicated stock images
+  - All 8 species (5 Atlantic Forest + 3 Mangrove) have dedicated custom images provided by user
+  - Updated species list: replaced Pessegueiro-bravo with Embaúba (Cecropia sp.) and Maria-mole with Cinzeiro (Erisma uncinatum Warm)
+  - Renamed Guaimirim to Guaimirim Cravo for accuracy
