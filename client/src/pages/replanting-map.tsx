@@ -3,14 +3,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Trees, Droplets, Target, Leaf, Map, BarChart3, TrendingUp, Sprout, Waves } from "lucide-react";
 import areaImage from "@assets/Captura de tela 2025-11-12 094029_1762951706488.png";
-import camboataImg from "@assets/stock_images/camboatá_cupania_ver_9808d536.jpg";
-import capixinguiImg from "@assets/stock_images/capixingui_croton_fl_d3fea44d.jpg";
-import guaimirimImg from "@assets/stock_images/guaimirim_eugenia_ce_2f7b7524.jpg";
-import pessegueiroImg from "@assets/stock_images/pessegueiro-bravo_eu_2d22fd80.jpg";
-import mariaMoleImg from "@assets/stock_images/maria-mole_guapira_o_ac4c2fe5.jpg";
-import mangueVermelhoImg from "@assets/stock_images/red_mangrove_rhizoph_2f668dd9.jpg";
-import manguePretoImg from "@assets/stock_images/black_mangrove_avice_7f426c7b.jpg";
-import mangueBrancoImg from "@assets/stock_images/white_mangrove_lagun_e310bdff.jpg";
+import camboataImg from "@assets/image_1762998654450.png";
+import capixinguiImg from "@assets/image_1762998726489.png";
+import guaimirimImg from "@assets/image_1762999000456.png";
+import embaubaImg from "@assets/image_1762999136227.png";
+import cinzeiroImg from "@assets/image_1762999345807.png";
+import mangueVermelhoImg from "@assets/image_1762999452444.png";
+import mangueBrancoImg from "@assets/image_1762999480196.png";
+import manguePretoImg from "@assets/image_1762999532780.png";
 
 interface Species {
   name: string;
@@ -338,14 +338,14 @@ export default function ReplantingMap() {
               <div 
                 className="p-3 border rounded-lg hover-elevate cursor-pointer transition-all"
                 onClick={() => setSelectedSpecies({
-                  name: "Guaimirim",
+                  name: "Guaimirim Cravo",
                   scientificName: "Eugenia cerasiflora",
                   description: "Contribui significativamente para a absorção de carbono",
                   image: guaimirimImg
                 })}
                 data-testid="species-guaimirim"
               >
-                <h4 className="font-semibold text-sm mb-1">Guaimirim <span className="text-muted-foreground font-normal italic">(Eugenia cerasiflora)</span></h4>
+                <h4 className="font-semibold text-sm mb-1">Guaimirim Cravo <span className="text-muted-foreground font-normal italic">(Eugenia cerasiflora)</span></h4>
                 <p className="text-sm text-muted-foreground">
                   Contribui significativamente para a absorção de carbono
                 </p>
@@ -354,32 +354,32 @@ export default function ReplantingMap() {
               <div 
                 className="p-3 border rounded-lg hover-elevate cursor-pointer transition-all"
                 onClick={() => setSelectedSpecies({
-                  name: "Pessegueiro-bravo",
-                  scientificName: "Eugenia excelsa",
-                  description: "Importante para a regulação do clima",
-                  image: pessegueiroImg
+                  name: "Embaúba",
+                  scientificName: "Cecropia sp.",
+                  description: "Espécie pioneira de crescimento rápido e alta capacidade de regeneração",
+                  image: embaubaImg
                 })}
-                data-testid="species-pessegueiro"
+                data-testid="species-embauba"
               >
-                <h4 className="font-semibold text-sm mb-1">Pessegueiro-bravo <span className="text-muted-foreground font-normal italic">(Eugenia excelsa)</span></h4>
+                <h4 className="font-semibold text-sm mb-1">Embaúba <span className="text-muted-foreground font-normal italic">(Cecropia sp.)</span></h4>
                 <p className="text-sm text-muted-foreground">
-                  Importante para a regulação do clima
+                  Espécie pioneira de crescimento rápido e alta capacidade de regeneração
                 </p>
               </div>
 
               <div 
                 className="p-3 border rounded-lg hover-elevate cursor-pointer transition-all"
                 onClick={() => setSelectedSpecies({
-                  name: "Maria-mole",
-                  scientificName: "Guapira opposita",
-                  description: "Resiliente e eficaz na absorção de CO₂",
-                  image: mariaMoleImg
+                  name: "Cinzeiro",
+                  scientificName: "Erisma uncinatum Warm",
+                  description: "Árvore de grande porte com madeira de qualidade e importante função ecológica",
+                  image: cinzeiroImg
                 })}
-                data-testid="species-maria-mole"
+                data-testid="species-cinzeiro"
               >
-                <h4 className="font-semibold text-sm mb-1">Maria-mole <span className="text-muted-foreground font-normal italic">(Guapira opposita)</span></h4>
+                <h4 className="font-semibold text-sm mb-1">Cinzeiro <span className="text-muted-foreground font-normal italic">(Erisma uncinatum Warm)</span></h4>
                 <p className="text-sm text-muted-foreground">
-                  Resiliente e eficaz na absorção de CO₂
+                  Árvore de grande porte com madeira de qualidade e importante função ecológica
                 </p>
               </div>
             </div>
